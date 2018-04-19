@@ -169,7 +169,7 @@ namespace ApiExamples
             Document doc = new Document(MyDir + "HtmlFixedSaveOptions.OptimizeGraphicsOutput.doc");
 
             HtmlFixedSaveOptions saveOptions = new HtmlFixedSaveOptions();
-            saveOptions.OptimizeOutput = true;
+            saveOptions.OptimizeOutput = false;
 
             doc.Save(MyDir + @"\Artifacts\HtmlFixedSaveOptions.OptimizeGraphicsOutput.html", saveOptions);
         }
