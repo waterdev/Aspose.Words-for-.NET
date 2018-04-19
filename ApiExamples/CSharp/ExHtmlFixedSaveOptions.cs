@@ -164,6 +164,17 @@ namespace ApiExamples
         }
 
         [Test]
+        public void OptimizeGraphicsOutput()
+        {
+            Document doc = new Document(MyDir + "HtmlFixedSaveOptions.OptimizeGraphicsOutput.doc");
+
+            HtmlFixedSaveOptions saveOptions = new HtmlFixedSaveOptions();
+            saveOptions.OptimizeOutput = true;
+
+            doc.Save(MyDir + @"\Artifacts\HtmlFixedSaveOptions.OptimizeGraphicsOutput.html", saveOptions);
+        }
+
+        [Test]
         public void UsingMachineFonts()
         {
             //ExStart

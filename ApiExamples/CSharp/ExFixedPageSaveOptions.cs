@@ -15,7 +15,7 @@ namespace ApiExamples
     [TestFixture]
     internal class ExFixedPageSaveOptions : ApiExampleBase
     {
-        public static IEnumerable<TestCaseData> FixedPageSaveOptionsDefaultValuesData
+        private static IEnumerable<TestCaseData> FixedPageSaveOptionsDefaultValuesData
         {
             get
             {
@@ -30,7 +30,7 @@ namespace ApiExamples
             }
         }
 
-        public static IEnumerable<TestCaseData> FixedPageSaveOptionsData
+        private static IEnumerable<TestCaseData> FixedPageSaveOptionsData
         {
             get
             {
