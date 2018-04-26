@@ -18,7 +18,7 @@ namespace ApiExamples
     internal class ExHtmlFixedSaveOptions : ApiExampleBase
     {
         [Test]
-        public void UseEncoding(Encoding newInstance)
+        public void UseEncoding()
         {
             //ExStart
             //ExFor:HtmlFixedSaveOptions.Encoding
