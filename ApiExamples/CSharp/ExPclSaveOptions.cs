@@ -5,6 +5,7 @@
 // "as is", without warranty of any kind, either expressed or implied.
 //////////////////////////////////////////////////////////////////////////
 
+using System.Drawing.Printing;
 using Aspose.Words;
 using Aspose.Words.Saving;
 using NUnit.Framework;
@@ -42,9 +43,26 @@ namespace ApiExamples
             PclSaveOptions saveOptions = new PclSaveOptions();
             saveOptions.AddPrinterFont("Courier", "Courier");
             saveOptions.FallbackFontName = "Times New Roman";
-
+            
             doc.Save(MyDir + @"\Artifacts\Document.EpubConversion.pcl", saveOptions);
             //ExEnd
+        }
+
+        [Test]
+        [Explicit("This test is manual check that PaperTray information are preserved in pcl document.")]
+        public void GetPreservedPaperTrayInformation()
+        {
+            Document doc = new Document(MyDir + "Document.EpubConversion.doc");
+
+            // Paper tray information is now preserved when saving document to PCL format.
+            // Following information is transferred from document's model to PCL file.
+            foreach (Section section in doc.Sections)
+            {
+                section.PageSetup.FirstPageTray = 15;
+                section.PageSetup.OtherPagesTray = 12;
+            }
+
+            doc.Save(MyDir + @"\Artifacts\Document.EpubConversion.pcl");
         }
     }
 }

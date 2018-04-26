@@ -8,6 +8,7 @@
 using System;
 using System.Drawing;
 using System.IO;
+using System.Security.Cryptography.X509Certificates;
 using Aspose.Words;
 using Aspose.Words.Drawing;
 using Aspose.Words.Drawing.Charts;
@@ -755,6 +756,49 @@ namespace ApiExamples
             seriesColl.Add("AW Series 4", categories, new double[] { double.NaN, double.NaN, double.NaN, double.NaN, double.NaN, 9 });
 
             doc.Save(MyDir + @"\Artifacts\EmptyValuesInChartData.docx");
+        }
+
+        [Test]
+        public void LayoutInCell()
+        {
+            //ExStart
+            //ExFor:ShapeBase.IsLayoutInCell
+            //ExSummary:Shows how to display the shape, inside a table or outside of it.
+            Document doc = new Document(MyDir + "Shape.LayoutInCell.docx");
+            DocumentBuilder builder = new DocumentBuilder(doc);
+
+            Shape watermark = new Shape(doc, ShapeType.TextPlainText);
+            watermark.RelativeHorizontalPosition = RelativeHorizontalPosition.Page;
+            watermark.RelativeVerticalPosition = RelativeVerticalPosition.Page;
+            watermark.IsLayoutInCell = false; // Display the shape outside of table cell if it will be placed into a cell
+
+            watermark.Width = 300;
+            watermark.Height = 70;
+            watermark.HorizontalAlignment = HorizontalAlignment.Center;
+            watermark.VerticalAlignment = VerticalAlignment.Center;
+
+            watermark.Rotation = -40;
+            watermark.Fill.Color = Color.Gainsboro;
+            watermark.StrokeColor = Color.Gainsboro;
+
+            watermark.TextPath.Text = "watermarkText";
+            watermark.TextPath.FontFamily = "Arial";
+
+            watermark.Name = string.Format("WaterMark_{0}", Guid.NewGuid());
+            watermark.WrapType = WrapType.None; // You shouldn't use WrapType.Inline, because it has effect only for top-level shapes
+            watermark.BehindText = true;
+            
+            Run run = doc.GetChildNodes(NodeType.Run, true)[doc.GetChildNodes(NodeType.Run, true).Count - 1] as Run;
+
+            builder.MoveTo(run);
+            builder.InsertNode(watermark);
+
+            // Behaviour of MS Word on working with shapes in table cells is changed in the last versions.
+            // Adding the following line is needed to make the shape displayed in center of a page.
+            doc.CompatibilityOptions.OptimizeFor(MsWordVersion.Word2010);
+
+            doc.Save(MyDir + @"\Artifacts\Shape.LayoutInCell.docx");
+            //ExEnd
         }
     }
 }
