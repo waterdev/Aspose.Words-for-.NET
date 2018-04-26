@@ -759,7 +759,7 @@ namespace ApiExamples
         }
 
         [Test]
-        public void LayoutInCell()
+        public void DisplayTheShapeIntoATableCell()
         {
             //ExStart
             //ExFor:ShapeBase.IsLayoutInCell
@@ -767,31 +767,37 @@ namespace ApiExamples
             Document doc = new Document(MyDir + "Shape.LayoutInCell.docx");
             DocumentBuilder builder = new DocumentBuilder(doc);
 
-            Shape watermark = new Shape(doc, ShapeType.TextPlainText);
-            watermark.RelativeHorizontalPosition = RelativeHorizontalPosition.Page;
-            watermark.RelativeVerticalPosition = RelativeVerticalPosition.Page;
-            watermark.IsLayoutInCell = false; // Display the shape outside of table cell if it will be placed into a cell
+            NodeCollection runs = doc.GetChildNodes(NodeType.Run, true);
+            int num = 1;
 
-            watermark.Width = 300;
-            watermark.Height = 70;
-            watermark.HorizontalAlignment = HorizontalAlignment.Center;
-            watermark.VerticalAlignment = VerticalAlignment.Center;
+            foreach (Run run in runs)
+            {
+                Shape watermark = new Shape(doc, ShapeType.TextPlainText);
+                watermark.RelativeHorizontalPosition = RelativeHorizontalPosition.Page;
+                watermark.RelativeVerticalPosition = RelativeVerticalPosition.Page;
+                watermark.IsLayoutInCell = true; // False - display the shape outside of table cell, True - display the shape outside of table cell
 
-            watermark.Rotation = -40;
-            watermark.Fill.Color = Color.Gainsboro;
-            watermark.StrokeColor = Color.Gainsboro;
+                watermark.Width = 30;
+                watermark.Height = 30;
+                watermark.HorizontalAlignment = HorizontalAlignment.Center;
+                watermark.VerticalAlignment = VerticalAlignment.Center;
 
-            watermark.TextPath.Text = "watermarkText";
-            watermark.TextPath.FontFamily = "Arial";
+                watermark.Rotation = -40;
+                watermark.Fill.Color = Color.Gainsboro;
+                watermark.StrokeColor = Color.Gainsboro;
 
-            watermark.Name = string.Format("WaterMark_{0}", Guid.NewGuid());
-            watermark.WrapType = WrapType.None; // You shouldn't use WrapType.Inline, because it has effect only for top-level shapes
-            watermark.BehindText = true;
-            
-            Run run = doc.GetChildNodes(NodeType.Run, true)[doc.GetChildNodes(NodeType.Run, true).Count - 1] as Run;
+                watermark.TextPath.Text = string.Format("{0}", num);
+                watermark.TextPath.FontFamily = "Arial";
 
-            builder.MoveTo(run);
-            builder.InsertNode(watermark);
+                watermark.Name = string.Format("WaterMark_{0}", Guid.NewGuid());
+                watermark.WrapType = WrapType.None; // Property will take effect only if the WrapType property is set to something other than WrapType.Inline
+                watermark.BehindText = true;
+
+                builder.MoveTo(run);
+                builder.InsertNode(watermark);
+
+                num = num + 1;
+            }
 
             // Behaviour of MS Word on working with shapes in table cells is changed in the last versions.
             // Adding the following line is needed to make the shape displayed in center of a page.
