@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2001-2017 Aspose Pty Ltd. All Rights Reserved.
+﻿// Copyright (c) 2001-2018 Aspose Pty Ltd. All Rights Reserved.
 //
 // This file is part of Aspose.Words. The source code in this file
 // is only intended as a supplement to the documentation, and is provided
@@ -512,9 +512,11 @@ namespace ApiExamples
             Node node = doc.LastSection.Body.LastParagraph;
 
             // Create an instance of HtmlSaveOptions and set a few options.
-            HtmlSaveOptions saveOptions = new HtmlSaveOptions();
-            saveOptions.ExportHeadersFootersMode = ExportHeadersFootersMode.PerSection;
-            saveOptions.ExportRelativeFontSize = true;
+            HtmlSaveOptions saveOptions = new HtmlSaveOptions
+            {
+                ExportHeadersFootersMode = ExportHeadersFootersMode.PerSection,
+                ExportRelativeFontSize = true
+            };
 
             // Convert the document to HTML and return as a String. Pass the instance of HtmlSaveOptions to
             // to use the specified options during the conversion.

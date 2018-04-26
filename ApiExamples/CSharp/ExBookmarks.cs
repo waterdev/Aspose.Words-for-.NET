@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2001-2017 Aspose Pty Ltd. All Rights Reserved.
+﻿// Copyright (c) 2001-2018 Aspose Pty Ltd. All Rights Reserved.
 //
 // This file is part of Aspose.Words. The source code in this file
 // is only intended as a supplement to the documentation, and is provided
@@ -187,8 +187,8 @@ namespace ApiExamples
 
             Assert.AreEqual("My_Bookmark", doc.Range.Bookmarks[0].Name); //ExSkip
 
-            //MS Word document does not support bookmark names with whitespaces by default. 
-            //If you have document which contains bookmark names with underscores, you can simply replace them to whitespaces.
+            // MS Word document does not support bookmark names with whitespaces by default. 
+            // If you have document which contains bookmark names with underscores, you can simply replace them to whitespaces.
             foreach (Aspose.Words.Bookmark bookmark in doc.Range.Bookmarks)
             {
                 bookmark.Name = bookmark.Name.Replace("_", " ");
@@ -208,8 +208,8 @@ namespace ApiExamples
             Document doc = new Document();
             DocumentBuilder builder = new DocumentBuilder(doc);
 
-            //Add bookmarks with whitespaces. MS Word formats (like doc, docx) does not support bookmarks with whitespaces by default 
-            //and all whitespaces in the bookmarks were replaced with underscores. If you need to use bookmarks in PDF or XPS outlines, you can use them with whitespaces.
+            // Add bookmarks with whitespaces. MS Word formats (like doc, docx) does not support bookmarks with whitespaces by default 
+            // and all whitespaces in the bookmarks were replaced with underscores. If you need to use bookmarks in PDF or XPS outlines, you can use them with whitespaces.
             builder.StartBookmark("My Bookmark");
             builder.Writeln("Text inside a bookmark.");
 
@@ -220,7 +220,7 @@ namespace ApiExamples
             builder.Writeln("Text after Nested Bookmark.");
             builder.EndBookmark("My Bookmark");
 
-            //Specify bookmarks outline level. If you are using xps format, just use XpsSaveOptions.
+            // Specify bookmarks outline level. If you are using xps format, just use XpsSaveOptions.
             PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
             pdfSaveOptions.OutlineOptions.BookmarksOutlineLevels.Add("My Bookmark", 1);
             pdfSaveOptions.OutlineOptions.BookmarksOutlineLevels.Add("Nested Bookmark", 2);
@@ -228,16 +228,16 @@ namespace ApiExamples
             doc.Save(MyDir + @"\Artifacts\Bookmarks.WhiteSpaces Out.pdf", pdfSaveOptions);
             //ExEnd
 
-            //Bind pdf with Aspose.Pdf
+            // Bind pdf with Aspose.Pdf
             PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
             bookmarkEditor.BindPdf(MyDir + @"\Artifacts\Bookmarks.WhiteSpaces Out.pdf");
 
-            //Get all bookmarks from the document
+            // Get all bookmarks from the document
             Bookmarks bookmarks = bookmarkEditor.ExtractBookmarks();
 
             Assert.AreEqual(2, bookmarks.Count);
 
-            //Assert that all the bookmarks title are with whitespaces
+            // Assert that all the bookmarks title are with whitespaces
             Assert.AreEqual("My Bookmark", bookmarks[0].Title);
             Assert.AreEqual("Nested Bookmark", bookmarks[1].Title);
         }

@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2001-2017 Aspose Pty Ltd. All Rights Reserved.
+﻿// Copyright (c) 2001-2018 Aspose Pty Ltd. All Rights Reserved.
 //
 // This file is part of Aspose.Words. The source code in this file
 // is only intended as a supplement to the documentation, and is provided
@@ -22,7 +22,7 @@ namespace ApiExamples
             //ExSummary:Shows how to work with units of measure of document content
             Document doc = new Document(MyDir + "OdtSaveOptions.MeasureUnit.docx");
 
-            //Open Office uses centimeters, MS Office uses inches
+            // Open Office uses centimeters, MS Office uses inches
             OdtSaveOptions saveOptions = new OdtSaveOptions();
             saveOptions.MeasureUnit = OdtSaveMeasureUnit.Inches;
             

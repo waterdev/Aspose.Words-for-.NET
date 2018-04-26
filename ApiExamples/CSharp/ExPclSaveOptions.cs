@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2001-2017 Aspose Pty Ltd. All Rights Reserved.
+﻿// Copyright (c) 2001-2018 Aspose Pty Ltd. All Rights Reserved.
 //
 // This file is part of Aspose.Words. The source code in this file
 // is only intended as a supplement to the documentation, and is provided
@@ -24,8 +24,10 @@ namespace ApiExamples
             //ExSummary:Shows how rasterized or not transformed elements before saving.
             Document doc = new Document(MyDir + "Document.EpubConversion.doc");
 
-            PclSaveOptions saveOptions = new PclSaveOptions();
-            saveOptions.RasterizeTransformedElements = true;
+            PclSaveOptions saveOptions = new PclSaveOptions
+            {
+                RasterizeTransformedElements = true
+            };
 
             doc.Save(MyDir + @"\Artifacts\Document.EpubConversion.pcl", saveOptions);
             //ExEnd
