@@ -66,6 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExAbsolutePositionTab.cs" />
     <Compile Include="ExBookmarks.cs" />
     <Compile Include="ExBorder.cs" />
     <Compile Include="ExBorderCollection.cs" />
