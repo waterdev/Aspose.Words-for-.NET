@@ -228,6 +228,21 @@ namespace ApiExamples
         }
 
         [Test]
+        public void NullConditionalOperators()
+        {
+            Document doc = new Document();
+            DocumentBuilder builder = new DocumentBuilder(doc);
+
+            DataSet ds = DataSet.AddTestData();
+
+            builder.Writeln("<<[ds.Managers?.Sum(p => p.Contracts?.Count())]>>");
+            
+            BuildReport(doc, ds, "ds");
+
+            doc.Save(MyDir + @"\Artifacts\ReportingEngine.NullConditionalOperators.docx");
+        }
+
+        [Test]
         public void ContextualObjectMemberAccess()
         {
             Document doc = new Document(MyDir + "ReportingEngine.ContextualObjectMemberAccess.docx");
