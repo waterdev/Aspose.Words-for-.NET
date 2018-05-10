@@ -149,14 +149,14 @@ namespace ApiExamples
             MemoryStream dstStream = new MemoryStream();
             doc.Save(dstStream, SaveFormat.Docx);
 
-            StructuredDocumentTag sdtNew = (StructuredDocumentTag)doc.GetChild(NodeType.StructuredDocumentTag, 0, true);
-            Assert.AreEqual(Color.Green.ToArgb(), sdtNew.Color.ToArgb());
+            StructuredDocumentTag updatedSdt = (StructuredDocumentTag)doc.GetChild(NodeType.StructuredDocumentTag, 0, true);
+            Assert.AreEqual(Color.Green.ToArgb(), updatedSdt.Color.ToArgb());
         }
 
         [Test, Order(3)]
         public void EditColorOfExistingSdt()
         {
-            Document doc = new Document(MyDir + "Sdt.docx");
+            Document doc = new Document(MyDir + "StructuredDocumentTag.EditColorOfExistingSdt.docx");
 
             StructuredDocumentTag sdt = (StructuredDocumentTag)doc.GetChild(NodeType.StructuredDocumentTag, 0, true);
             Assert.AreEqual(Color.Red.ToArgb(), sdt.Color.ToArgb());
@@ -166,8 +166,8 @@ namespace ApiExamples
             MemoryStream dstStream = new MemoryStream();
             doc.Save(dstStream, SaveFormat.Docx);
 
-            StructuredDocumentTag sdtNew = (StructuredDocumentTag)doc.GetChild(NodeType.StructuredDocumentTag, 0, true);
-            Assert.AreEqual(Color.Green.ToArgb(), sdtNew.Color.ToArgb());
+            StructuredDocumentTag updatedSdt = (StructuredDocumentTag)doc.GetChild(NodeType.StructuredDocumentTag, 0, true);
+            Assert.AreEqual(Color.Green.ToArgb(), updatedSdt.Color.ToArgb());
         }
     }
 }

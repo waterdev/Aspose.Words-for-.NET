@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using ApiExamples.TestData;
 using Aspose.Words;
 using Aspose.Words.Drawing;
@@ -216,8 +217,8 @@ namespace ApiExamples
         public void Operators()
         {
             Document doc = new Document(MyDir + "ReportingEngine.Operators.docx");
-            NumericDataSourceWithMethod testData = new NumericDataSourceWithMethod(1, 2.0, 3, null, true);
-
+            NumericDataSourceWithMethod testData = new NumericDataSourceWithMethod(1, 2.0, 3, null, true, new[] { "first", "second", "entity", null });
+            
             ReportingEngine report = new ReportingEngine();
             report.KnownTypes.Add(typeof(NumericDataSourceWithMethod));
             report.BuildReport(doc, testData, "ds");
@@ -225,21 +226,6 @@ namespace ApiExamples
             doc.Save(MyDir + @"\Artifacts\ReportingEngine.Operators.docx");
 
             Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + @"\Artifacts\ReportingEngine.Operators.docx", MyDir + @"\Golds\ReportingEngine.Operators Gold.docx"));
-        }
-
-        [Test]
-        public void NullConditionalOperators()
-        {
-            Document doc = new Document();
-            DocumentBuilder builder = new DocumentBuilder(doc);
-
-            DataSet ds = DataSet.AddTestData();
-
-            builder.Writeln("<<[ds.Managers?.Sum(p => p.Contracts?.Count())]>>");
-            
-            BuildReport(doc, ds, "ds");
-
-            doc.Save(MyDir + @"\Artifacts\ReportingEngine.NullConditionalOperators.docx");
         }
 
         [Test]
