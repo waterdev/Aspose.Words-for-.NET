@@ -759,45 +759,5 @@ namespace ApiExamples.NetCore
 
             doc.Save(MyDir + @"\Artifacts\EmptyValuesInChartData.docx");
         }
-
-        [Test]
-        public void ChartAxisProperties()
-        {
-            Document doc = new Document();
-            DocumentBuilder builder = new DocumentBuilder(doc);
-
-            // Insert chart.
-            Shape shape = builder.InsertChart(ChartType.Column, 432, 252);
-            Chart chart = shape.Chart;
-
-            // Clear demo data.
-            chart.Series.Clear();
-
-            // Fill data.
-            chart.Series.Add("AW Series 1", new[] { "First", "Second", "Third", "Fourth", "Fifth" }, new double[] { 640, 320, 280, 120, 150 });
-
-            ChartAxis xAxis = chart.AxisX;
-            ChartAxis yAxis = chart.AxisY;
-
-            // Change the X axis to be category instead of date, so all the points will be put with equal interval on the X axis.
-            xAxis.CategoryType = AxisCategoryType.Automatic;
-
-            // Define X axis properties.
-            xAxis.Crosses = AxisCrosses.Automatic;
-            xAxis.ReverseOrder = true;
-            xAxis.MajorTickMark = AxisTickMark.Cross;
-            xAxis.MinorTickMark = AxisTickMark.Outside;
-            xAxis.TickLabelOffset = 200;
-
-            // Define Y axis properties.
-            yAxis.TickLabelPosition = AxisTickLabelPosition.High;
-            yAxis.MajorUnit = 100;
-            yAxis.MinorUnit = 50;
-            yAxis.DisplayUnit.Unit = AxisBuiltInUnit.Hundreds;
-            yAxis.Scaling.Minimum = 100;
-            yAxis.Scaling.Maximum = 700;
-
-            doc.Save(MyDir + "123.docx");
-        }
     }
 }

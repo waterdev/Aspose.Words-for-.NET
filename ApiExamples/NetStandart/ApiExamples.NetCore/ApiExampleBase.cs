@@ -102,8 +102,8 @@ namespace ApiExamples.NetCore
         {
             gAssemblyDir = GetAssemblyDir(Assembly.GetExecutingAssembly());
             gMyDir = new Uri(new Uri(gAssemblyDir), @"../../../../../Data/").LocalPath;
-            gImageDir = new Uri(new Uri(gAssemblyDir), @"../../../Data/Images/").LocalPath;
-            gDatabaseDir = new Uri(new Uri(gAssemblyDir), @"../../../Data/Database/").LocalPath;
+            gImageDir = new Uri(new Uri(gAssemblyDir), @"../../../../../Data/Images/").LocalPath;
+            gDatabaseDir = new Uri(new Uri(gAssemblyDir), @"../../../../../Data/Database/").LocalPath;
         }
 
         private static readonly String gAssemblyDir;
