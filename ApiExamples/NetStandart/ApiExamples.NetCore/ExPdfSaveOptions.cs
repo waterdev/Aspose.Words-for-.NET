@@ -219,14 +219,14 @@ namespace ApiExamples.NetCore
             //ExEnd
         }
 
-        [Test]
+        //ExStart
+        //ExFor:MetafileRenderingMode.VectorWithFallback
+        //ExFor:IWarningCallback
+        //ExFor:PdfSaveOptions.MetafileRenderingOptions
+        //ExSummary:Shows added fallback to bitmap rendering and changing type of warnings about unsupported metafile records
+        [Test] //ExSkip
         public void HandleBinaryRasterWarnings()
         {
-            //ExStart
-            //ExFor:MetafileRenderingMode.VectorWithFallback
-            //ExFor:IWarningCallback
-            //ExFor:PdfSaveOptions.MetafileRenderingOptions
-            //ExSummary:Shows added fallback to bitmap rendering and changing type of warnings about unsupported metafile records
             Document doc = new Document(MyDir + "PdfSaveOptions.HandleRasterWarnings.doc");
 
             MetafileRenderingOptions metafileRenderingOptions = new MetafileRenderingOptions();
@@ -241,9 +241,9 @@ namespace ApiExamples.NetCore
             PdfSaveOptions saveOptions = new PdfSaveOptions();
             saveOptions.MetafileRenderingOptions = metafileRenderingOptions;
             
-            doc.Save(MyDir + "PdfSaveOptions.HandleRasterWarnings Out.pdf", saveOptions);
+            doc.Save(MyDir + @"\Artifacts\PdfSaveOptions.HandleRasterWarnings.pdf", saveOptions);
 
-            Assert.AreEqual(2, callback.mWarnings.Count);
+            Assert.AreEqual(1, callback.mWarnings.Count);
             Assert.True(callback.mWarnings[0].Description.Contains("R2_XORPEN"));
         }
 
@@ -265,6 +265,7 @@ namespace ApiExamples.NetCore
             }
 
             public WarningInfoCollection mWarnings = new WarningInfoCollection();
-        }//ExEnd
+        }
+        //ExEnd
     }
 }

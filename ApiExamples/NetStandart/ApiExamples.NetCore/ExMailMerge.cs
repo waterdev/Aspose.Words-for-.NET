@@ -178,6 +178,7 @@ namespace ApiExamples.NetCore
         }
 
         [Test]
+        [Ignore("Need to update ")]
         public void ExecuteWithRegionsDataTable()
         {
             //ExStart
