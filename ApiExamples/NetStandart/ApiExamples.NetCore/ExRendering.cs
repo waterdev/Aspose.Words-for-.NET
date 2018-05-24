@@ -371,7 +371,7 @@ namespace ApiExamples.NetCore
             PageInfo pageInfo = doc.GetPageInfo(0);
 
             // Let's say we want the image at 50% zoom.
-            const float myScale = 0.50f;
+            const float myScale = 0.5f;
 
             // Let's say we want the image at this resolution.
             const float myResolution = 200.0f;
@@ -380,21 +380,26 @@ namespace ApiExamples.NetCore
 
             using (SKBitmap bitmap = new SKBitmap(pageSize.Width, pageSize.Height))
             {
-                bitmap.Resize(new SKImageInfo((int) myResolution, (int) myResolution), SKBitmapResizeMethod.Box);
-                
                 using (SKCanvas canvas = new SKCanvas(bitmap))
                 {
-                    // You can apply various settings to the Graphics object.
-                    canvas.DrawPaint(new SKPaint { IsAntialias = true }); //canvas.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
-                    
-                    // Fill the page background.
-                    canvas.Clear(SKColor.Parse(Color.White.ToArgb().ToString())); //FillRectangle(Brushes.White, 0, 0, pageSize.Width, pageSize.Height);
+                    // Scale to compensate for the larger bitmap
+                    canvas.Scale(2);
 
+                    // Fill the page background.
+                    // If you need to set color without specific options, you can use "canvas.Clear(SKColors.White);"
+                    SKPaint paint = new SKPaint
+                    {
+                        Color = SKColors.White,
+                        IsAntialias = true,
+                        FilterQuality = SKFilterQuality.High
+                    };
+
+                    canvas.DrawPaint(paint);
+                    
                     // Render the page using the zoom.
                     doc.RenderToScale(0, canvas, 0, 0, myScale);
                 }
 
-                // Save output to file.
                 using (SKFileWStream fs = new SKFileWStream(MyDir + @"\Artifacts\Rendering.RenderToScale.png"))
                 {
                     bitmap.Encode(fs, SKEncodedImageFormat.Png, 100);
@@ -416,46 +421,49 @@ namespace ApiExamples.NetCore
                 // User has some sort of a Graphics object. In this case created from a bitmap.
                 using (SKCanvas canvas = new SKCanvas(bitmap))
                 {
-                    // The user can specify any options on the Graphics object including
-                    // transform, anti-aliasing, page units, etc.
-                    canvas.DrawPaint(new SKPaint { IsAntialias = true }); //canvas.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
-
-                    // Let's say we want to fit the page into a 3" x 3" square on the screen so use inches as units.
-                    //canvas.PageUnit = GraphicsUnit.Inch;
+                    // Apply scale transform.
+                    canvas.Scale(70);
 
                     // The output should be offset 0.5" from the edge and rotated.
                     canvas.Translate(0.5f, 0.5f);
                     canvas.RotateDegrees(10);
 
                     // This is our test rectangle.
-                    canvas.DrawRect(new SKRect(0f, 0f, 3f, 3f), new SKPaint { Color = SKColor.Parse(Color.Black.ToArgb().ToString()), Typeface = SKTypeface.FromFamilyName("Times New Roman", SKTypefaceStyle.Bold)});
-                    
+                    SKRect rect = new SKRect(0f, 0f, 3f, 3f);
+                    canvas.DrawRect(rect, new SKPaint
+                    {
+                        Color = SKColors.Black,
+                        Style = SKPaintStyle.Stroke,
+                        StrokeWidth = 3f / 72f
+                    });
+
                     // User specifies (in world coordinates) where on the Graphics to render and what size.
                     float returnedScale = doc.RenderToSize(0, canvas, 0f, 0f, 3f, 3f);
 
-                    // This is the calculated scale factor to fit 297mm into 3".
                     Console.WriteLine("The image was rendered at {0:P0} zoom.", returnedScale);
 
                     // One more example, this time in millimeters.
-                    //canvas.PageUnit = GraphicsUnit.Millimeter;
+                    canvas.ResetMatrix();
 
-                    //Undo the transform
-                    canvas.Translate(-0.5f, -0.5f);
+                    // Apply scale transform.
+                    canvas.Scale(5);
 
                     // Move the origin 10mm 
                     canvas.Translate(10, 10);
 
-                    // Apply both scale transform and page scale for fun.
-                    canvas.Scale(0.5f, 0.5f);
-                    //canvas.PageScale = 2f;
-
                     // This is our test rectangle.
-                    canvas.DrawRect(new SKRect(90, 10, 50, 100), new SKPaint { Color = SKColor.Parse(Color.Black.ToArgb().ToString()), Typeface = SKTypeface.FromFamilyName("Times New Roman", SKTypefaceStyle.Bold) });
-                     
+                    rect = new SKRect(0, 0, 50, 100);
+                    rect.Offset(90, 10);
+                    canvas.DrawRect(rect, new SKPaint
+                    {
+                        Color = SKColors.Black,
+                        Style = SKPaintStyle.Stroke,
+                        StrokeWidth = 1
+                    });
+                    
                     // User specifies (in world coordinates) where on the Graphics to render and what size.
-                    doc.RenderToSize(1, canvas, 90, 10, 50, 100);
+                    doc.RenderToSize(0, canvas, 90, 10, 50, 100);
 
-                    // Save output to file.
                     using (SKFileWStream fs = new SKFileWStream(MyDir + @"\Artifacts\Rendering.RenderToSize.png"))
                     {
                         bitmap.Encode(fs, SKEncodedImageFormat.Png, 100);
@@ -471,7 +479,6 @@ namespace ApiExamples.NetCore
             //ExStart
             //ExFor:Document.RenderToScale
             //ExSummary:Renders individual pages to graphics to create one image with thumbnails of all pages.
-
             // The user opens or builds a document.
             Document doc = new Document(MyDir + "Rendering.doc");
 
@@ -502,10 +509,8 @@ namespace ApiExamples.NetCore
                 // The Graphics object can be created from a bitmap, from a metafile, printer or window.
                 using (SKCanvas canvas = new SKCanvas(bitmap))
                 {
-                    canvas.DrawPaint(new SKPaint { IsAntialias = true }); //canvas.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
-
                     // Fill the "paper" with white, otherwise it will be transparent.
-                    canvas.Clear(SKColor.Parse(Color.White.ToArgb().ToString())); //canvas.FillRectangle(new SolidBrush(Color.White), 0, 0, imgWidth, imgHeight);
+                    canvas.Clear(SKColors.White);
 
                     for (int pageIndex = 0; pageIndex < doc.PageCount; pageIndex++)
                     {
@@ -519,17 +524,21 @@ namespace ApiExamples.NetCore
                         SizeF size = doc.RenderToScale(pageIndex, canvas, thumbLeft, thumbTop, scale);
 
                         // Draw the page rectangle.
-                        canvas.DrawRect(new SKRect(thumbLeft, thumbTop, size.Width, size.Height), new SKPaint { Color = SKColor.Parse(Color.Black.ToArgb().ToString()) });
+                        SKRect rect = new SKRect(0, 0, size.Width, size.Height);
+                        rect.Offset(thumbLeft, thumbTop);
+                        canvas.DrawRect(rect, new SKPaint
+                        {
+                            Color = SKColors.Black,
+                            Style = SKPaintStyle.Stroke
+                        });
                     }
 
-                    // Save output to file.
                     using (SKFileWStream fs = new SKFileWStream(MyDir + @"\Artifacts\Rendering.Thumbnails.png"))
                     {
                         bitmap.Encode(fs, SKEncodedImageFormat.Png, 100);
                     }
                 }
             }
-            //ExEnd
         }
 
         [Ignore("Run only when the printer driver is installed")]

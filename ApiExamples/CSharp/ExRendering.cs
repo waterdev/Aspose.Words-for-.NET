@@ -567,7 +567,6 @@ namespace ApiExamples
             //ExStart
             //ExFor:Document.RenderToScale
             //ExSummary:Renders individual pages to graphics to create one image with thumbnails of all pages.
-
             // The user opens or builds a document.
             Document doc = new Document(MyDir + "Rendering.doc");
 
