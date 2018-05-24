@@ -29,7 +29,7 @@ namespace ApiExamples.NetCore
         [Test]
         public void SimpleCase()
         {
-            Aspose.Words.Document doc = DocumentHelper.CreateSimpleDocument("<<[s.Name]>> says: <<[s.Message]>>");
+            Document doc = DocumentHelper.CreateSimpleDocument("<<[s.Name]>> says: <<[s.Message]>>");
 
             MessageTestClass sender = new MessageTestClass("LINQ Reporting Engine", "Hello World");
             BuildReport(doc, sender, "s", ReportBuildOptions.None);
@@ -43,7 +43,7 @@ namespace ApiExamples.NetCore
         [Test]
         public void StringFormat()
         {
-            Aspose.Words.Document doc = DocumentHelper.CreateSimpleDocument("<<[s.Name]:lower>> says: <<[s.Message]:upper>>, <<[s.Message]:caps>>, <<[s.Message]:firstCap>>");
+            Document doc = DocumentHelper.CreateSimpleDocument("<<[s.Name]:lower>> says: <<[s.Message]:upper>>, <<[s.Message]:caps>>, <<[s.Message]:firstCap>>");
 
             MessageTestClass sender = new MessageTestClass("LINQ Reporting Engine", "hello world");
             BuildReport(doc, sender, "s");
@@ -57,7 +57,7 @@ namespace ApiExamples.NetCore
         [Test]
         public void NumberFormat()
         {
-            Aspose.Words.Document doc = DocumentHelper.CreateSimpleDocument("<<[s.Value1]:alphabetic>> : <<[s.Value2]:roman:lower>>, <<[s.Value3]:ordinal>>, <<[s.Value1]:ordinalText:upper>>" + ", <<[s.Value2]:cardinal>>, <<[s.Value3]:hex>>, <<[s.Value3]:arabicDash>>");
+            Document doc = DocumentHelper.CreateSimpleDocument("<<[s.Value1]:alphabetic>> : <<[s.Value2]:roman:lower>>, <<[s.Value3]:ordinal>>, <<[s.Value1]:ordinalText:upper>>" + ", <<[s.Value2]:cardinal>>, <<[s.Value3]:hex>>, <<[s.Value3]:arabicDash>>");
 
             NumericTestClass sender = new NumericTestBuilder().WithValuesAndDate(1, 2.2, 200, null, DateTime.Parse("10.09.2016 10:00:00")).Build();
 
@@ -72,7 +72,7 @@ namespace ApiExamples.NetCore
         [Test]
         public void DataTableTest()
         {
-            Aspose.Words.Document doc = new Aspose.Words.Document(MyDir + "ReportingEngine.TestDataTable.docx");
+            Document doc = new Document(MyDir + "ReportingEngine.TestDataTable.docx");
 
             BuildReport(doc, Common.GetContracts(), "Contracts");
 
@@ -84,7 +84,7 @@ namespace ApiExamples.NetCore
         [Test]
         public void ProgressiveTotal()
         {
-            Aspose.Words.Document doc = new Aspose.Words.Document(MyDir + "ReportingEngine.Total.docx");
+            Document doc = new Document(MyDir + "ReportingEngine.Total.docx");
 
             BuildReport(doc, Common.GetContracts(), "Contracts");
 
@@ -96,7 +96,7 @@ namespace ApiExamples.NetCore
         [Test]
         public void NestedDataTableTest()
         {
-            Aspose.Words.Document doc = new Aspose.Words.Document(MyDir + "ReportingEngine.TestNestedDataTable.docx");
+            Document doc = new Document(MyDir + "ReportingEngine.TestNestedDataTable.docx");
 
             BuildReport(doc, Common.GetManagers(), "Managers");
 
@@ -108,7 +108,7 @@ namespace ApiExamples.NetCore
         [Test]
         public void ChartTest()
         {
-            Aspose.Words.Document doc = new Aspose.Words.Document(MyDir + "ReportingEngine.TestChart.docx");
+            Document doc = new Document(MyDir + "ReportingEngine.TestChart.docx");
             
             BuildReport(doc, Common.GetManagers(), "managers");
 
@@ -120,7 +120,7 @@ namespace ApiExamples.NetCore
         [Test]
         public void BubbleChartTest()
         {
-            Aspose.Words.Document doc = new Aspose.Words.Document(MyDir + "ReportingEngine.TestBubbleChart.docx");
+            Document doc = new Document(MyDir + "ReportingEngine.TestBubbleChart.docx");
             
             BuildReport(doc, Common.GetManagers(), "managers");
 
@@ -132,7 +132,7 @@ namespace ApiExamples.NetCore
         [Test]
         public void ConditionalExpressionForLeaveChartSeries()
         {
-            Aspose.Words.Document doc = new Aspose.Words.Document(MyDir + "ReportingEngine.TestRemoveChartSeries.docx");
+            Document doc = new Document(MyDir + "ReportingEngine.TestRemoveChartSeries.docx");
 
             int condition = 3;
 
@@ -146,7 +146,7 @@ namespace ApiExamples.NetCore
         [Test]
         public void ConditionalExpressionForRemoveChartSeries()
         {
-            Aspose.Words.Document doc = new Aspose.Words.Document(MyDir + "ReportingEngine.TestRemoveChartSeries.docx");
+            Document doc = new Document(MyDir + "ReportingEngine.TestRemoveChartSeries.docx");
 
             int condition = 2;
 
@@ -160,7 +160,7 @@ namespace ApiExamples.NetCore
         [Test]
         public void IndexOf()
         {
-            Aspose.Words.Document doc = new Aspose.Words.Document(MyDir + "ReportingEngine.TestIndexOf.docx");
+            Document doc = new Document(MyDir + "ReportingEngine.TestIndexOf.docx");
             
             BuildReport(doc, Common.GetManagers(), "Managers");
 
@@ -173,7 +173,7 @@ namespace ApiExamples.NetCore
         [Test]
         public void IfElse()
         {
-            Aspose.Words.Document doc = new Aspose.Words.Document(MyDir + "ReportingEngine.IfElse.docx");
+            Document doc = new Document(MyDir + "ReportingEngine.IfElse.docx");
             
             BuildReport(doc, Common.GetManagers(), "m");
 
@@ -186,7 +186,7 @@ namespace ApiExamples.NetCore
         [Test]
         public void IfElseWithoutData()
         {
-            Aspose.Words.Document doc = new Aspose.Words.Document(MyDir + "ReportingEngine.IfElse.docx");
+            Document doc = new Document(MyDir + "ReportingEngine.IfElse.docx");
             
             BuildReport(doc, Common.GetEmptyManagers(), "m");
 
@@ -199,7 +199,7 @@ namespace ApiExamples.NetCore
         [Test]
         public void ExtensionMethods()
         {
-            Aspose.Words.Document doc = new Aspose.Words.Document(MyDir + "ReportingEngine.ExtensionMethods.docx");
+            Document doc = new Document(MyDir + "ReportingEngine.ExtensionMethods.docx");
             
             BuildReport(doc, Common.GetManagers(), "Managers");
 
@@ -211,7 +211,7 @@ namespace ApiExamples.NetCore
         [Test]
         public void Operators()
         {
-            Aspose.Words.Document doc = new Aspose.Words.Document(MyDir + "ReportingEngine.Operators.docx");
+            Document doc = new Document(MyDir + "ReportingEngine.Operators.docx");
 
             NumericTestClass testData = new NumericTestBuilder().WithValuesAndLogical(1, 2.0, 3, null, true).Build();
 
@@ -227,7 +227,7 @@ namespace ApiExamples.NetCore
         [Test]
         public void ContextualObjectMemberAccess()
         {
-            Aspose.Words.Document doc = new Aspose.Words.Document(MyDir + "ReportingEngine.ContextualObjectMemberAccess.docx");
+            Document doc = new Document(MyDir + "ReportingEngine.ContextualObjectMemberAccess.docx");
             
             BuildReport(doc, Common.GetManagers(), "Managers");
 
@@ -239,7 +239,7 @@ namespace ApiExamples.NetCore
         [Test]
         public void InsertDocumentDinamically()
         {
-            Aspose.Words.Document template = DocumentHelper.CreateSimpleDocument("<<doc [src.Document]>>");
+            Document template = DocumentHelper.CreateSimpleDocument("<<doc [src.Document]>>");
 
             DocumentTestClass doc = new DocumentTestBuilder().WithDocument(new Document(MyDir + "ReportingEngine.TestDataTable.docx")).Build();
 
@@ -252,9 +252,9 @@ namespace ApiExamples.NetCore
         [Test]
         public void InsertDocumentDinamicallyByStream()
         {
-            Aspose.Words.Document template = DocumentHelper.CreateSimpleDocument("<<doc [src.DocumentStream]>>");
+            Document template = DocumentHelper.CreateSimpleDocument("<<doc [src.DocumentStream]>>");
 
-            DocumentTestClass docStream = new DocumentTestBuilder().WithDocumentStream(new FileStream(this.mDocument, FileMode.Open, FileAccess.Read)).Build();
+            DocumentTestClass docStream = new DocumentTestBuilder().WithDocumentStream(new FileStream(mDocument, FileMode.Open, FileAccess.Read)).Build();
 
             BuildReport(template, docStream, "src", ReportBuildOptions.None);
             template.Save(MyDir + @"\Artifacts\ReportingEngine.InsertDocumentDinamically.docx");
@@ -265,7 +265,7 @@ namespace ApiExamples.NetCore
         [Test]
         public void InsertDocumentDinamicallyByBytes()
         {
-            Aspose.Words.Document template = DocumentHelper.CreateSimpleDocument("<<doc [src.DocumentBytes]>>");
+            Document template = DocumentHelper.CreateSimpleDocument("<<doc [src.DocumentBytes]>>");
 
             DocumentTestClass docBytes = new DocumentTestBuilder().WithDocumentBytes(File.ReadAllBytes(MyDir + "ReportingEngine.TestDataTable.docx")).Build();
 
@@ -278,7 +278,7 @@ namespace ApiExamples.NetCore
         [Test]
         public void InsertDocumentDinamicallyByUri()
         {
-            Aspose.Words.Document template = DocumentHelper.CreateSimpleDocument("<<doc [src.DocumentUri]>>");
+            Document template = DocumentHelper.CreateSimpleDocument("<<doc [src.DocumentUri]>>");
 
             DocumentTestClass docUri = new DocumentTestBuilder().WithDocumentUri("http://www.snee.com/xml/xslt/sample.doc").Build();
 
@@ -291,8 +291,8 @@ namespace ApiExamples.NetCore
         [Test]
         public void InsertImageDinamically()
         {
-            Aspose.Words.Document template = DocumentHelper.CreateTemplateDocumentWithDrawObjects("<<image [src.Image]>>", ShapeType.TextBox);
-            ImageTestClass image = new ImageTestBuilder().WithImage(Image.FromFile(this.mImage, true)).Build();
+            Document template = DocumentHelper.CreateTemplateDocumentWithDrawObjects("<<image [src.Image]>>", ShapeType.TextBox);
+            ImageTestClass image = new ImageTestBuilder().WithImage(Image.FromFile(mImage, true)).Build();
 
             BuildReport(template, image, "src", ReportBuildOptions.None);
             template.Save(MyDir + @"\Artifacts\ReportingEngine.InsertImageDinamically.docx");
@@ -303,8 +303,8 @@ namespace ApiExamples.NetCore
         [Test]
         public void InsertImageDinamicallyByStream()
         {
-            Aspose.Words.Document template = DocumentHelper.CreateTemplateDocumentWithDrawObjects("<<image [src.ImageStream]>>", ShapeType.TextBox);
-            ImageTestClass imageStream = new ImageTestBuilder().WithImageStream(new FileStream(this.mImage, FileMode.Open, FileAccess.Read)).Build();
+            Document template = DocumentHelper.CreateTemplateDocumentWithDrawObjects("<<image [src.ImageStream]>>", ShapeType.TextBox);
+            ImageTestClass imageStream = new ImageTestBuilder().WithImageStream(new FileStream(mImage, FileMode.Open, FileAccess.Read)).Build();
 
             BuildReport(template, imageStream, "src", ReportBuildOptions.None);
             template.Save(MyDir + @"\Artifacts\ReportingEngine.InsertImageDinamically.docx");
@@ -315,8 +315,8 @@ namespace ApiExamples.NetCore
         [Test]
         public void InsertImageDinamicallyByBytes()
         {
-            Aspose.Words.Document template = DocumentHelper.CreateTemplateDocumentWithDrawObjects("<<image [src.ImageBytes]>>", ShapeType.TextBox);
-            ImageTestClass imageBytes = new ImageTestBuilder().WithImageBytes(File.ReadAllBytes(this.mImage)).Build();
+            Document template = DocumentHelper.CreateTemplateDocumentWithDrawObjects("<<image [src.ImageBytes]>>", ShapeType.TextBox);
+            ImageTestClass imageBytes = new ImageTestBuilder().WithImageBytes(File.ReadAllBytes(mImage)).Build();
 
             BuildReport(template, imageBytes, "src", ReportBuildOptions.None);
             template.Save(MyDir + @"\Artifacts\ReportingEngine.InsertImageDinamically.docx");
@@ -327,7 +327,7 @@ namespace ApiExamples.NetCore
         [Test]
         public void InsertImageDinamicallyByUri()
         {
-            Aspose.Words.Document template = DocumentHelper.CreateTemplateDocumentWithDrawObjects("<<image [src.ImageUri]>>", ShapeType.TextBox);
+            Document template = DocumentHelper.CreateTemplateDocumentWithDrawObjects("<<image [src.ImageUri]>>", ShapeType.TextBox);
             ImageTestClass imageUri = new ImageTestBuilder().WithImageUri("http://joomla-aspose.dynabic.com/templates/aspose/App_Themes/V3/images/customers/americanexpress.png").Build();
 
             BuildReport(template, imageUri, "src", ReportBuildOptions.None);
@@ -339,7 +339,7 @@ namespace ApiExamples.NetCore
         [Test]
         public void WithoutKnownType()
         {
-            Aspose.Words.Document doc = new Aspose.Words.Document();
+            Document doc = new Document();
             DocumentBuilder builder = new DocumentBuilder(doc);
 
             builder.Writeln("<<[new DateTime()]:”dd.MM.yyyy”>>");
@@ -351,7 +351,7 @@ namespace ApiExamples.NetCore
         [Test]
         public void WorkWithKnownTypes()
         {
-            Aspose.Words.Document doc = new Aspose.Words.Document();
+            Document doc = new Document();
             DocumentBuilder builder = new DocumentBuilder(doc);
 
             builder.Writeln("<<[new DateTime(2016, 1, 20)]:”dd.MM.yyyy”>>");
@@ -374,15 +374,15 @@ namespace ApiExamples.NetCore
         [Ignore("WORDSNET-16258")]
         public void StretchImagefitHeight()
         {
-            Aspose.Words.Document doc = DocumentHelper.CreateTemplateDocumentWithDrawObjects("<<image [src.ImageStream] -fitHeight>>", ShapeType.TextBox);
+            Document doc = DocumentHelper.CreateTemplateDocumentWithDrawObjects("<<image [src.ImageStream] -fitHeight>>", ShapeType.TextBox);
 
-            ImageTestClass imageStream = new ImageTestBuilder().WithImageStream(new FileStream(this.mImage, FileMode.Open, FileAccess.Read)).Build();
+            ImageTestClass imageStream = new ImageTestBuilder().WithImageStream(new FileStream(mImage, FileMode.Open, FileAccess.Read)).Build();
             BuildReport(doc, imageStream, "src", ReportBuildOptions.None);
 
             MemoryStream dstStream = new MemoryStream();
             doc.Save(dstStream, SaveFormat.Docx);
 
-            doc = new Aspose.Words.Document(dstStream);
+            doc = new Document(dstStream);
             NodeCollection shapes = doc.GetChildNodes(NodeType.Shape, true);
 
             foreach (Shape shape in shapes)
@@ -402,15 +402,15 @@ namespace ApiExamples.NetCore
         [Ignore("WORDSNET-16258")]
         public void StretchImagefitWidth()
         {
-            Aspose.Words.Document doc = DocumentHelper.CreateTemplateDocumentWithDrawObjects("<<image [src.ImageStream] -fitWidth>>", ShapeType.TextBox);
+            Document doc = DocumentHelper.CreateTemplateDocumentWithDrawObjects("<<image [src.ImageStream] -fitWidth>>", ShapeType.TextBox);
 
-            ImageTestClass imageStream = new ImageTestBuilder().WithImageStream(new FileStream(this.mImage, FileMode.Open, FileAccess.Read)).Build();
+            ImageTestClass imageStream = new ImageTestBuilder().WithImageStream(new FileStream(mImage, FileMode.Open, FileAccess.Read)).Build();
             BuildReport(doc, imageStream, "src", ReportBuildOptions.None);
 
             MemoryStream dstStream = new MemoryStream();
             doc.Save(dstStream, SaveFormat.Docx);
 
-            doc = new Aspose.Words.Document(dstStream);
+            doc = new Document(dstStream);
             NodeCollection shapes = doc.GetChildNodes(NodeType.Shape, true);
 
             foreach (Shape shape in shapes)
@@ -430,15 +430,15 @@ namespace ApiExamples.NetCore
         [Ignore("WORDSNET-16258")]
         public void StretchImagefitSize()
         {
-            Aspose.Words.Document doc = DocumentHelper.CreateTemplateDocumentWithDrawObjects("<<image [src.ImageStream] -fitSize>>", ShapeType.TextBox);
+            Document doc = DocumentHelper.CreateTemplateDocumentWithDrawObjects("<<image [src.ImageStream] -fitSize>>", ShapeType.TextBox);
 
-            ImageTestClass imageStream = new ImageTestBuilder().WithImageStream(new FileStream(this.mImage, FileMode.Open, FileAccess.Read)).Build();
+            ImageTestClass imageStream = new ImageTestBuilder().WithImageStream(new FileStream(mImage, FileMode.Open, FileAccess.Read)).Build();
             BuildReport(doc, imageStream, "src", ReportBuildOptions.None);
 
             MemoryStream dstStream = new MemoryStream();
             doc.Save(dstStream, SaveFormat.Docx);
 
-            doc = new Aspose.Words.Document(dstStream);
+            doc = new Document(dstStream);
             NodeCollection shapes = doc.GetChildNodes(NodeType.Shape, true);
 
             foreach (Shape shape in shapes)
@@ -458,15 +458,15 @@ namespace ApiExamples.NetCore
         [Ignore("WORDSNET-16258")]
         public void StretchImagefitSizeLim()
         {
-            Aspose.Words.Document doc = DocumentHelper.CreateTemplateDocumentWithDrawObjects("<<image [src.ImageStream] -fitSizeLim>>", ShapeType.TextBox);
+            Document doc = DocumentHelper.CreateTemplateDocumentWithDrawObjects("<<image [src.ImageStream] -fitSizeLim>>", ShapeType.TextBox);
 
-            ImageTestClass imageStream = new ImageTestBuilder().WithImageStream(new FileStream(this.mImage, FileMode.Open, FileAccess.Read)).Build();
+            ImageTestClass imageStream = new ImageTestBuilder().WithImageStream(new FileStream(mImage, FileMode.Open, FileAccess.Read)).Build();
             BuildReport(doc, imageStream, "src", ReportBuildOptions.None);
 
             MemoryStream dstStream = new MemoryStream();
             doc.Save(dstStream, SaveFormat.Docx);
 
-            doc = new Aspose.Words.Document(dstStream);
+            doc = new Document(dstStream);
             NodeCollection shapes = doc.GetChildNodes(NodeType.Shape, true);
 
             foreach (Shape shape in shapes)
@@ -511,7 +511,7 @@ namespace ApiExamples.NetCore
         [Test]
         public void SetBackgroundColor()
         {
-            Aspose.Words.Document doc = new Aspose.Words.Document(MyDir + "ReportingEngine.BackColor.docx");
+            Document doc = new Document(MyDir + "ReportingEngine.BackColor.docx");
 
             List<ColorItemTestClass> colors = new List<ColorItemTestClass>
             {
@@ -527,7 +527,7 @@ namespace ApiExamples.NetCore
             Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + @"\Artifacts\ReportingEngine.BackColor.docx", MyDir + @"\Golds\ReportingEngine.BackColor Gold.docx"));
         }
 
-        private static void BuildReport(Aspose.Words.Document document, object dataSource, string dataSourceName, ReportBuildOptions reportBuildOptions)
+        private static void BuildReport(Document document, object dataSource, string dataSourceName, ReportBuildOptions reportBuildOptions)
         {
             ReportingEngine engine = new ReportingEngine();
             engine.Options = reportBuildOptions;
@@ -535,19 +535,19 @@ namespace ApiExamples.NetCore
             engine.BuildReport(document, dataSource, dataSourceName);
         }
 
-        private static void BuildReport(Aspose.Words.Document document, object[] dataSource, string[] dataSourceName)
+        private static void BuildReport(Document document, object[] dataSource, string[] dataSourceName)
         {
             ReportingEngine engine = new ReportingEngine();
             engine.BuildReport(document, dataSource, dataSourceName);
         }
 
-        private static void BuildReport(Aspose.Words.Document document, object dataSource, string dataSourceName)
+        private static void BuildReport(Document document, object dataSource, string dataSourceName)
         {
             ReportingEngine engine = new ReportingEngine();
             engine.BuildReport(document, dataSource, dataSourceName);
         }
 
-        private static void BuildReport(Aspose.Words.Document document, object dataSource)
+        private static void BuildReport(Document document, object dataSource)
         {
             ReportingEngine engine = new ReportingEngine();
             engine.BuildReport(document, dataSource);

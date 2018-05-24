@@ -8,9 +8,11 @@
 using System;
 using System.Collections;
 using System.Data;
+using System.Diagnostics;
 using Aspose.Words;
 using Aspose.Words.Fields;
 using Aspose.Words.MailMerging;
+using lcpi.data.oledb;
 using NUnit.Framework;
 
 namespace ApiExamples.NetCore
@@ -62,44 +64,42 @@ namespace ApiExamples.NetCore
         }
 
         [Test]
-        [Ignore("OleDb not supported")]
         public void ExecuteDataReader()
         {
-            ////ExStart
-            ////ExFor:MailMerge.Execute(IDataReader)
-            ////ExSummary:Executes mail merge from an ADO.NET DataReader.
-            //// Open the template document
-            //Document doc = new Document(MyDir + "MailingLabelsDemo.doc");
+            //ExStart
+            //ExFor:MailMerge.Execute(IDataReader)
+            //ExSummary:Executes mail merge from an ADO.NET DataReader.
+            // Open the template document
+            Document doc = new Document(MyDir + "MailingLabelsDemo.doc");
 
             //// Open the database connection.
-            //String connString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + DatabaseDir + "Northwind.mdb";
-            //OleDbConnection conn = new OleDbConnection(connString);
-            //try
-            //{
-            //    conn.Open();
-            //}
-            //catch (Exception ex)
-            //{
-            //    Debug.WriteLine(ex);
-            //}
+            String connString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + DatabaseDir + "Northwind.mdb";
+            OleDbConnection conn = new OleDbConnection(connString);
+            try
+            {
+                conn.Open();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
 
-            //// Open the data reader.
-            //OleDbCommand cmd = new OleDbCommand("SELECT TOP 50 * FROM Customers ORDER BY Country, CompanyName", conn);
-            //OleDbDataReader dataReader = cmd.ExecuteReader();
+            // Open the data reader.
+            OleDbCommand cmd = new OleDbCommand("SELECT TOP 50 * FROM Customers ORDER BY Country, CompanyName", conn);
+            OleDbDataReader dataReader = cmd.ExecuteReader();
 
-            //// Perform the mail merge
-            //doc.MailMerge.Execute(dataReader);
+            // Perform the mail merge
+            doc.MailMerge.Execute(dataReader);
 
-            //// Close database.
-            //dataReader.Close();
-            //conn.Close();
+            // Close database.
+            dataReader.Close();
+            conn.Close();
 
-            //doc.Save(MyDir + @"\Artifacts\MailMerge.ExecuteDataReader.doc");
-            ////ExEnd
+            doc.Save(MyDir + @"\Artifacts\MailMerge.ExecuteDataReader.doc");
+            //ExEnd
         }
 
         [Test]
-        [Ignore("OleDb not supported")]
         public void ExecuteDataView()
         {
             //ExStart
@@ -123,23 +123,23 @@ namespace ApiExamples.NetCore
 
         private static DataTable GetOrders()
         {
-            //// Open a database connection.
-            //String connString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + DatabaseDir + "Northwind.mdb";
-            //OleDbConnection conn = new OleDbConnection(connString);
-            //conn.Open();
+            // Open a database connection.
+            String connString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + DatabaseDir + "Northwind.mdb";
+            OleDbConnection conn = new OleDbConnection(connString);
+            conn.Open();
 
-            //// Create the command.
-            //OleDbCommand cmd = new OleDbCommand("SELECT * FROM AsposeWordOrders", conn);
+            // Create the command.
+            OleDbCommand cmd = new OleDbCommand("SELECT * FROM AsposeWordOrders", conn);
 
-            //// Fill an ADO.NET table from the command.
-            //OleDbDataAdapter da = new OleDbDataAdapter(cmd);
-            //DataTable table = new DataTable();
-            //da.Fill(table);
+            // Fill an ADO.NET table from the command.
+            OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+            DataTable table = new DataTable();
+            da.Fill(table);
 
-            //// Close database.
-            //conn.Close();
+            // Close database.
+            conn.Close();
 
-            //return table;
+            // return table;
             return null;
         }
         //ExEnd
@@ -178,7 +178,6 @@ namespace ApiExamples.NetCore
         }
 
         [Test]
-        [Ignore("Need to update")]
         public void ExecuteWithRegionsDataTable()
         {
             //ExStart
@@ -225,22 +224,21 @@ namespace ApiExamples.NetCore
         /// </summary>
         private static DataTable ExecuteDataTable(String commandText)
         {
-            //// Open the database connection.
-            //String connString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + DatabaseDir + "Northwind.mdb";
-            //OleDbConnection conn = new OleDbConnection(connString);
-            //conn.Open();
+            // Open the database connection.
+            String connString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + DatabaseDir + "Northwind.mdb";
+            OleDbConnection conn = new OleDbConnection(connString);
+            conn.Open();
 
-            //// Create and execute a command.
-            //OleDbCommand cmd = new OleDbCommand(commandText, conn);
-            //OleDbDataAdapter da = new OleDbDataAdapter(cmd);
-            //DataTable table = new DataTable();
-            //da.Fill(table);
+            // Create and execute a command.
+            OleDbCommand cmd = new OleDbCommand(commandText, conn);
+            OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+            DataTable table = new DataTable();
+            da.Fill(table);
 
-            //// Close the database.
-            //conn.Close();
+            // Close the database.
+            conn.Close();
 
-            //return table;
-            return null;
+            return table;
         }
         //ExEnd
 
