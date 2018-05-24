@@ -1,25 +1,26 @@
 ﻿using System.Drawing;
 using System.IO;
 using ApiExamples.NetCore.TestData.TestClasses;
+using SkiaSharp;
 
 namespace ApiExamples.NetCore.TestData.TestBuilders
 {
     public class ImageTestBuilder : ApiExampleBase
     {
-        private Image mImage;
+        private SKBitmap mImage;
         private Stream mImageStream;
         private byte[] mImageBytes;
         private string mImageUri;
 
         public ImageTestBuilder()
         {
-            this.mImage = Image.FromFile(ImageDir + "Watermark.png");
+            this.mImage = SKBitmap.Decode(ImageDir + "Watermark.png");
             this.mImageStream = Stream.Null;
             this.mImageBytes = new byte[0];
             this.mImageUri = string.Empty;
         }
 
-        public ImageTestBuilder WithImage(Image image)
+        public ImageTestBuilder WithImage(SKBitmap image)
         {
             this.mImage = image;
             return this;

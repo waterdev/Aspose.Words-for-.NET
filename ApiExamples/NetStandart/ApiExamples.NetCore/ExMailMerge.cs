@@ -64,6 +64,7 @@ namespace ApiExamples.NetCore
         }
 
         [Test]
+        [Ignore("ExecuteReader isn't supported by library")]
         public void ExecuteDataReader()
         {
             //ExStart
@@ -72,7 +73,7 @@ namespace ApiExamples.NetCore
             // Open the template document
             Document doc = new Document(MyDir + "MailingLabelsDemo.doc");
 
-            //// Open the database connection.
+            // Open the database connection.
             String connString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + DatabaseDir + "Northwind.mdb";
             OleDbConnection conn = new OleDbConnection(connString);
             try

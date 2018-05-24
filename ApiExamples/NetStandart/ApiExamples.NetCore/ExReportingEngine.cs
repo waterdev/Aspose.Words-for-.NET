@@ -17,6 +17,7 @@ using Aspose.Words;
 using Aspose.Words.Drawing;
 using Aspose.Words.Reporting;
 using NUnit.Framework;
+using SkiaSharp;
 
 namespace ApiExamples.NetCore
 {
@@ -292,7 +293,7 @@ namespace ApiExamples.NetCore
         public void InsertImageDinamically()
         {
             Document template = DocumentHelper.CreateTemplateDocumentWithDrawObjects("<<image [src.Image]>>", ShapeType.TextBox);
-            ImageTestClass image = new ImageTestBuilder().WithImage(Image.FromFile(mImage, true)).Build();
+            ImageTestClass image = new ImageTestBuilder().WithImage(SKBitmap.Decode(mImage)).Build();
 
             BuildReport(template, image, "src", ReportBuildOptions.None);
             template.Save(MyDir + @"\Artifacts\ReportingEngine.InsertImageDinamically.docx");
