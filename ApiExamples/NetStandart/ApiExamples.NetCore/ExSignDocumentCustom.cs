@@ -24,7 +24,6 @@ namespace ApiExamples.NetCore
     [TestFixture]
     public class ExSignDocumentCustom : ApiExampleBase
     {
-        [Test]
         //ExStart
         //ExFor:SignatureLineOptions.Signer
         //ExFor:SignatureLineOptions.SignerTitle
@@ -33,6 +32,8 @@ namespace ApiExamples.NetCore
         //ExFor:SignOptions.SignatureLineImage
         //ExFor:DigitalSignatureUtil.Sign(String, String, CertificateHolder, SignOptions)
         //ExSummary:Demonstrates how to add new signature line to the document and sign it with personal signature using SignatureLineId.
+        [Test] //ExSkip
+        [Ignore("WORDSNET-16868")] //ExSkip
         public static void SignSignatureLineUsingSignatureLineId()
         {
             string signPersonName = "Ron Williams";

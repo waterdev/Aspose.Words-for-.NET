@@ -1595,6 +1595,7 @@ namespace ApiExamples.NetCore
         }
 
         [Test]
+        [Ignore("WORDSNET-16868")]
         public void CreateAndSignSignatureLineUsingProviderId()
         {
             //ExStart
