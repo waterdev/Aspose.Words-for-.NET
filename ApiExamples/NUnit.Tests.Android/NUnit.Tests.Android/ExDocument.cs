@@ -33,7 +33,7 @@ namespace NUnit.Tests.Android
         public void LicenseFromFileNoPath()
         {
             // Copy a license to the bin folder so the example can execute.
-            String dstFileName = Path.Combine(AssemblyDir, "Aspose.Words.lic");
+            String dstFileName = Path.Combine(MyDir, "Aspose.Words.lic");
             File.Copy(TestLicenseFileName, dstFileName);
 
             //ExStart
