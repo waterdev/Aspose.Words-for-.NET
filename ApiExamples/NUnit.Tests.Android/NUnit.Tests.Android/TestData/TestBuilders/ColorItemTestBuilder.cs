@@ -15,8 +15,8 @@ namespace NUnit.Tests.Android.TestData.TestBuilders
         public ColorItemTestBuilder()
         {
             Name = "DefaultName";
-            Color = Color.Black;
-            ColorCode = Color.Black.ToArgb();
+            Color = System.Drawing.Color.Black;
+            ColorCode = System.Drawing.Color.Black.ToArgb();
             Value1 = 1.0;
             Value2 = 1.0;
             Value3 = 1.0;

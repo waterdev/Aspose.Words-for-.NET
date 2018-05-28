@@ -30,6 +30,7 @@ namespace NUnit.Tests.Android
         //ExFor:DigitalSignatureUtil.Sign(String, String, CertificateHolder, SignOptions)
         //ExSummary:Demonstrates how to add new signature line to the document and sign it with personal signature using SignatureLineId.
         [Test] //ExSkip
+        [Ignore("WORDSNET-16868")] //ExSkip
         public static void SignSignatureLineUsingSignatureLineId()
         {
             string signPersonName = "Ron Williams";

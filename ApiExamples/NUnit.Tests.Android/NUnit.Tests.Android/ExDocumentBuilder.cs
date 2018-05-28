@@ -1595,6 +1595,7 @@ namespace NUnit.Tests.Android
         }
 
         [Test]
+        [Ignore("WORDSNET-16868")]
         public void CreateAndSignSignatureLineUsingProviderId()
         {
             //ExStart

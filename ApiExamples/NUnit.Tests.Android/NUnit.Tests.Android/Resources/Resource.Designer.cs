@@ -11,7 +11,7 @@
 
 [assembly: global::Android.Runtime.ResourceDesignerAttribute("NUnit.Tests.Android.Resource", IsApplication=true)]
 
-namespace NUnit.Tests.Android
+namespace NUnit.Tests.Android.Resources
 {
 	
 	
@@ -26,12 +26,12 @@ namespace NUnit.Tests.Android
 		
 		public static void UpdateIdValues()
 		{
-			global::Nunit.Runner.Resource.String.ApplicationName = global::NUnit.Tests.Android.Resource.String.ApplicationName;
-			global::Nunit.Runner.Resource.String.Hello = global::NUnit.Tests.Android.Resource.String.Hello;
-			global::PCLStorage.Resource.String.ApplicationName = global::NUnit.Tests.Android.Resource.String.ApplicationName;
-			global::PCLStorage.Resource.String.Hello = global::NUnit.Tests.Android.Resource.String.Hello;
-			global::Xamarin.Forms.Platform.Resource.String.ApplicationName = global::NUnit.Tests.Android.Resource.String.ApplicationName;
-			global::Xamarin.Forms.Platform.Resource.String.Hello = global::NUnit.Tests.Android.Resource.String.Hello;
+			global::Nunit.Runner.Resource.String.ApplicationName = global::NUnit.Tests.Android.Resources.Resource.String.ApplicationName;
+			global::Nunit.Runner.Resource.String.Hello = global::NUnit.Tests.Android.Resources.Resource.String.Hello;
+			global::PCLStorage.Resource.String.ApplicationName = global::NUnit.Tests.Android.Resources.Resource.String.ApplicationName;
+			global::PCLStorage.Resource.String.Hello = global::NUnit.Tests.Android.Resources.Resource.String.Hello;
+			global::Xamarin.Forms.Platform.Resource.String.ApplicationName = global::NUnit.Tests.Android.Resources.Resource.String.ApplicationName;
+			global::Xamarin.Forms.Platform.Resource.String.Hello = global::NUnit.Tests.Android.Resources.Resource.String.Hello;
 		}
 		
 		public partial class Attribute

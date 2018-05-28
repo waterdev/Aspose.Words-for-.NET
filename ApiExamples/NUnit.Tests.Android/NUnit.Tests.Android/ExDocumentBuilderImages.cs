@@ -79,7 +79,7 @@ namespace NUnit.Tests.Android
             }
             //ExEnd
         }
-        
+
         [Test]
         public void InsertImageFromByteArrayRelativePosition()
         {

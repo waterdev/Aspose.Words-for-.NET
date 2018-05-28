@@ -56,6 +56,12 @@
     <Reference Include="FormsViewGroup, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Xamarin.Forms.1.5.0.6447\lib\MonoAndroid10\FormsViewGroup.dll</HintPath>
     </Reference>
+    <Reference Include="lcpi.data.oledb.nets2_0, Version=1.7.1.3418, Culture=neutral, PublicKeyToken=ff716095e8002e7e, processorArchitecture=MSIL">
+      <HintPath>..\packages\lcpi.data.oledb.1.7.1.3418\lib\netstandard2.0\lcpi.data.oledb.nets2_0.dll</HintPath>
+    </Reference>
+    <Reference Include="lcpi.lib.nets2_0, Version=2.1.1.1665, Culture=neutral, PublicKeyToken=ff716095e8002e7e, processorArchitecture=MSIL">
+      <HintPath>..\packages\lcpi.lib.2.1.1.1665\lib\netstandard2.0\lcpi.lib.nets2_0.dll</HintPath>
+    </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
     <Reference Include="nunit.framework, Version=3.6.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
