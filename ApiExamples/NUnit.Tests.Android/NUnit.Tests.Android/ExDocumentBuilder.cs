@@ -89,7 +89,7 @@ namespace NUnit.Tests.Android
             builder.InsertBreak(BreakType.PageBreak);
             builder.Writeln("Page3");
 
-            doc.Save(MyDir + @"\Artifacts\DocumentBuilder.HeadersAndFooters.doc");
+            doc.Save(MyDir + "Artifacts/DocumentBuilder.HeadersAndFooters.doc");
             //ExEnd
         }
 
@@ -212,7 +212,7 @@ namespace NUnit.Tests.Android
 
             builder.Writeln("Hello World!");
 
-            doc.Save(MyDir + @"\Artifacts\DocumentBuilderAndSave.docx");
+            doc.Save(MyDir + "Artifacts/DocumentBuilderAndSave.docx");
             //ExEnd
         }
 
@@ -243,7 +243,7 @@ namespace NUnit.Tests.Android
 
             builder.Write(" for more information.");
 
-            doc.Save(MyDir + @"\Artifacts\DocumentBuilder.InsertHyperlink.doc");
+            doc.Save(MyDir + "Artifacts/DocumentBuilder.InsertHyperlink.doc");
             //ExEnd
         }
 
@@ -278,7 +278,7 @@ namespace NUnit.Tests.Android
 
             builder.Writeln(". We hope you enjoyed the example.");
 
-            doc.Save(MyDir + @"\Artifacts\DocumentBuilder.PushPopFont.doc");
+            doc.Save(MyDir + "Artifacts/DocumentBuilder.PushPopFont.doc");
             //ExEnd
         }
 
@@ -316,7 +316,7 @@ namespace NUnit.Tests.Android
                 shape.Top = (builder.PageSetup.PageHeight - shape.Height) / 2;
             }
 
-            doc.Save(MyDir + @"\Artifacts\DocumentBuilder.InsertWatermark.doc");
+            doc.Save(MyDir + "Artifacts/DocumentBuilder.InsertWatermark.doc");
             //ExEnd
         }
 
@@ -333,7 +333,7 @@ namespace NUnit.Tests.Android
 
             builder.InsertHtml("<P align='right'>Paragraph right</P>" + "<b>Implicit paragraph left</b>" + "<div align='center'>Div center</div>" + "<h1 align='left'>Heading 1 left.</h1>");
 
-            doc.Save(MyDir + @"\Artifacts\DocumentBuilder.InsertHtml.doc");
+            doc.Save(MyDir + "Artifacts/DocumentBuilder.InsertHtml.doc");
             //ExEnd
         }
 
@@ -350,7 +350,7 @@ namespace NUnit.Tests.Android
 
             builder.InsertHtml("<P align='right'>Paragraph right</P>" + "<b>Implicit paragraph left</b>" + "<div align='center'>Div center</div>" + "<h1 align='left'>Heading 1 left.</h1>", useBuilderFormatting);
 
-            doc.Save(MyDir + @"\Artifacts\DocumentBuilder.InsertHtml.doc");
+            doc.Save(MyDir + "Artifacts/DocumentBuilder.InsertHtml.doc");
             //ExEnd
         }
 
@@ -368,10 +368,10 @@ namespace NUnit.Tests.Android
             builder.InsertHtml(mathMl);
             //ExEnd
 
-            doc.Save(MyDir + @"\Artifacts\MathML Out.docx");
-            doc.Save(MyDir + @"\Artifacts\MathML Out.pdf");
+            doc.Save(MyDir + "Artifacts/MathML Out.docx");
+            doc.Save(MyDir + "Artifacts/MathML Out.pdf");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + @"\Golds\MathML Gold.docx", MyDir + @"\Artifacts\MathML Out.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Golds/MathML Gold.docx", MyDir + "Artifacts/MathML Out.docx"));
         }
 
         [Test]
@@ -416,7 +416,7 @@ namespace NUnit.Tests.Android
             builder.Writeln("");
             builder.Writeln("");
 
-            builder.Document.Save(MyDir + @"\Artifacts\DocumentBuilder.CreateForm.doc");
+            builder.Document.Save(MyDir + "Artifacts/DocumentBuilder.CreateForm.doc");
             //ExEnd
         }
 
@@ -513,7 +513,7 @@ namespace NUnit.Tests.Android
             builder.MoveToDocumentEnd();
             builder.Writeln("End of document.");
 
-            doc.Save(MyDir + @"\Artifacts\DocumentBuilder.WorkingWithNodes.doc");
+            doc.Save(MyDir + "Artifacts/DocumentBuilder.WorkingWithNodes.doc");
             //ExEnd
         }
 
@@ -540,7 +540,7 @@ namespace NUnit.Tests.Android
             builder.Italic = true;
             builder.Writeln("Vladimir Averkin");
 
-            doc.Save(MyDir + @"\Artifacts\DocumentBuilder.FillingDocument.doc");
+            doc.Save(MyDir + "Artifacts/DocumentBuilder.FillingDocument.doc");
             //ExEnd
         }
 
@@ -598,7 +598,7 @@ namespace NUnit.Tests.Android
             doc.UpdateFields();
             //ExEnd
 
-            doc.Save(MyDir + @"\Artifacts\DocumentBuilder.InsertToc.docx");
+            doc.Save(MyDir + "Artifacts/DocumentBuilder.InsertToc.docx");
         }
 
         [Test]
@@ -677,7 +677,7 @@ namespace NUnit.Tests.Android
 
             builder.EndTable();
 
-            builder.Document.Save(MyDir + @"\Artifacts\DocumentBuilder.InsertTable.doc");
+            builder.Document.Save(MyDir + "Artifacts/DocumentBuilder.InsertTable.doc");
             //ExEnd
         }
 
@@ -730,7 +730,7 @@ namespace NUnit.Tests.Android
             builder.Writeln("50");
             builder.EndRow();
 
-            doc.Save(MyDir + @"\Artifacts\DocumentBuilder.SetTableStyle.docx");
+            doc.Save(MyDir + "Artifacts/DocumentBuilder.SetTableStyle.docx");
             //ExEnd
 
             // Verify that the style was set by expanding to direct formatting.
@@ -778,7 +778,7 @@ namespace NUnit.Tests.Android
                 builder.EndRow();
             }
 
-            doc.Save(MyDir + @"\Artifacts\Table.HeadingRow.doc");
+            doc.Save(MyDir + "Artifacts/Table.HeadingRow.doc");
             //ExEnd
 
             Assert.True(table.FirstRow.RowFormat.HeadingFormat);
@@ -812,7 +812,7 @@ namespace NUnit.Tests.Android
             builder.InsertCell();
             builder.Writeln("Cell #3");
 
-            doc.Save(MyDir + @"\Artifacts\Table.PreferredWidth.doc");
+            doc.Save(MyDir + "Artifacts/Table.PreferredWidth.doc");
             //ExEnd
 
             // Verify the correct settings were applied.
@@ -856,7 +856,7 @@ namespace NUnit.Tests.Android
             builder.Writeln("Cell automatically sized. The size of this cell is calculated from the table preferred width.");
             builder.Writeln("In this case the cell will fill up the rest of the available space.");
 
-            doc.Save(MyDir + @"\Artifacts\Table.CellPreferredWidths.doc");
+            doc.Save(MyDir + "Artifacts/Table.CellPreferredWidths.doc");
             //ExEnd
 
             // Verify the correct settings were applied.
@@ -878,7 +878,7 @@ namespace NUnit.Tests.Android
             // inserted from HTML.
             builder.InsertHtml("<table>" + "<tr>" + "<td>Row 1, Cell 1</td>" + "<td>Row 1, Cell 2</td>" + "</tr>" + "<tr>" + "<td>Row 2, Cell 2</td>" + "<td>Row 2, Cell 2</td>" + "</tr>" + "</table>");
 
-            doc.Save(MyDir + @"\Artifacts\DocumentBuilder.InsertTableFromHtml.doc");
+            doc.Save(MyDir + "Artifacts/DocumentBuilder.InsertTableFromHtml.doc");
             //ExEnd
 
             // Verify the table was constructed properly.
@@ -919,7 +919,7 @@ namespace NUnit.Tests.Android
 
             builder.EndTable();
 
-            doc.Save(MyDir + @"\Artifacts\DocumentBuilder.InsertNestedTable.doc");
+            doc.Save(MyDir + "Artifacts/DocumentBuilder.InsertNestedTable.doc");
             //ExEnd
 
             Assert.AreEqual(2, doc.GetChildNodes(NodeType.Table, true).Count);
@@ -964,7 +964,7 @@ namespace NUnit.Tests.Android
             builder.EndTable();
 
             // Save the document to disk.
-            doc.Save(MyDir + @"\Artifacts\DocumentBuilder.CreateSimpleTable.doc");
+            doc.Save(MyDir + "Artifacts/DocumentBuilder.CreateSimpleTable.doc");
             //ExEnd
 
             // Verify that the cell count of the table is four.
@@ -1059,7 +1059,7 @@ namespace NUnit.Tests.Android
             builder.EndRow();
             builder.EndTable();
 
-            doc.Save(MyDir + @"\Artifacts\DocumentBuilder.CreateFormattedTable.doc");
+            doc.Save(MyDir + "Artifacts/DocumentBuilder.CreateFormattedTable.doc");
             //ExEnd
 
             // Verify that the cell style is different compared to default.
@@ -1121,7 +1121,7 @@ namespace NUnit.Tests.Android
             builder.CellFormat.ClearFormatting();
             builder.Writeln("Cell #4");
 
-            doc.Save(MyDir + @"\Artifacts\Table.SetBordersAndShading.doc");
+            doc.Save(MyDir + "Artifacts/Table.SetBordersAndShading.doc");
             //ExEnd
 
             // Verify the table was created correctly.
@@ -1182,7 +1182,7 @@ namespace NUnit.Tests.Android
             // Clear hyperlink formatting.
             builder.Font.ClearFormatting();
 
-            doc.Save(MyDir + @"\Artifacts\DocumentBuilder.InsertHyperlinkToLocalBookmark.doc");
+            doc.Save(MyDir + "Artifacts/DocumentBuilder.InsertHyperlinkToLocalBookmark.doc");
             //ExEnd
         }
 
@@ -1506,7 +1506,7 @@ namespace NUnit.Tests.Android
             DocumentBuilder builder = new DocumentBuilder(doc);
             builder.InsertImage("http://www.aspose.com/images/aspose-logo.gif");
 
-            doc.Save(MyDir + @"\Artifacts\DocumentBuilder.InsertImageFromUrl.doc");
+            doc.Save(MyDir + "Artifacts/DocumentBuilder.InsertImageFromUrl.doc");
             //ExEnd
 
             // Verify that the image was inserted into the document.
@@ -1529,7 +1529,7 @@ namespace NUnit.Tests.Android
             builder.InsertImage(ImageDir + "LogoSmall.png", RelativeHorizontalPosition.Margin, 200, RelativeVerticalPosition.Margin, 100, -1, -1, WrapType.Square);
             //ExEnd
 
-            doc.Save(MyDir + @"\Artifacts\DocumentBuilder.InsertImageOriginalSize.doc");
+            doc.Save(MyDir + "Artifacts/DocumentBuilder.InsertImageOriginalSize.doc");
         }
 
         [Test]
@@ -1623,7 +1623,7 @@ namespace NUnit.Tests.Android
             SignatureLine signatureLine = builder.InsertSignatureLine(signatureLineOptions).SignatureLine;
             signatureLine.ProviderId = Guid.Parse("CF5A7BB4-8F3C-4756-9DF6-BEF7F13259A2");
             
-            doc.Save(MyDir + @"\Artifacts\DocumentBuilder.SignatureLineProviderId In.docx");
+            doc.Save(MyDir + "Artifacts/DocumentBuilder.SignatureLineProviderId In.docx");
 
             SignOptions signOptions = new SignOptions();
             signOptions.SignatureLineId = signatureLine.Id;
@@ -1633,10 +1633,10 @@ namespace NUnit.Tests.Android
             
             CertificateHolder certHolder = CertificateHolder.Create(MyDir + "morzal.pfx", "aw");
 
-            DigitalSignatureUtil.Sign(MyDir + @"\Artifacts\DocumentBuilder.SignatureLineProviderId In.docx", MyDir + @"\Artifacts\DocumentBuilder.SignatureLineProviderId Out.docx", certHolder, signOptions);
+            DigitalSignatureUtil.Sign(MyDir + "Artifacts/DocumentBuilder.SignatureLineProviderId In.docx", MyDir + "Artifacts/DocumentBuilder.SignatureLineProviderId Out.docx", certHolder, signOptions);
             //ExEnd
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + @"\Artifacts\DocumentBuilder.SignatureLineProviderId Out.docx", MyDir + @"\Golds\DocumentBuilder.SignatureLineProviderId Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/DocumentBuilder.SignatureLineProviderId Out.docx", MyDir + "Golds/DocumentBuilder.SignatureLineProviderId Gold.docx"));
         }
 
         [Test]
@@ -1876,9 +1876,9 @@ namespace NUnit.Tests.Android
             doc.FootnoteOptions.StartNumber = 1;
             doc.FootnoteOptions.RestartRule = FootnoteNumberingRule.RestartPage;
 
-            doc.Save(MyDir + @"\Artifacts\DocumentBuilder.InsertFootnote.docx");
+            doc.Save(MyDir + "Artifacts/DocumentBuilder.InsertFootnote.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + @"\Artifacts\DocumentBuilder.InsertFootnote.docx", MyDir + @"\Golds\DocumentBuilder.InsertFootnote Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/DocumentBuilder.InsertFootnote.docx", MyDir + "Golds/DocumentBuilder.InsertFootnote Gold.docx"));
         }
 
         [Test]
@@ -1958,9 +1958,9 @@ namespace NUnit.Tests.Android
 
             builder.InsertDocument(docToInsert, ImportFormatMode.KeepSourceFormatting);
             //ExEnd
-            builder.Document.Save(MyDir + @"\Artifacts\DocumentBuilder.InsertDocument.docx");
+            builder.Document.Save(MyDir + "Artifacts/DocumentBuilder.InsertDocument.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + @"\Artifacts\DocumentBuilder.InsertDocument.docx", MyDir + @"\Golds\DocumentBuilder.InsertDocument Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/DocumentBuilder.InsertDocument.docx", MyDir + "Golds/DocumentBuilder.InsertDocument Gold.docx"));
         }
 
         [Test]
@@ -1994,7 +1994,7 @@ namespace NUnit.Tests.Android
                 Shape oleObjectWithProgId = builder.InsertOleObject(MyDir + "Document.Spreadsheet.xlsx", "Excel.Sheet", false, false, representingImage);
             }
             
-            doc.Save(MyDir + @"\Artifacts\Document.InsertedOleObject.docx");
+            doc.Save(MyDir + "Artifacts/Document.InsertedOleObject.docx");
             //ExEnd
         }
 
@@ -2018,7 +2018,7 @@ namespace NUnit.Tests.Android
 
             builder.InsertChart(ChartType.Pie, ConvertUtil.PixelToPoint(300), ConvertUtil.PixelToPoint(300));
 
-            doc.Save(MyDir + @"\Artifacts\Document.InsertedChartDouble.doc");
+            doc.Save(MyDir + "Artifacts/Document.InsertedChartDouble.doc");
             //ExEnd
         }
 
@@ -2033,7 +2033,7 @@ namespace NUnit.Tests.Android
 
             builder.InsertChart(ChartType.Pie, RelativeHorizontalPosition.Margin, 100, RelativeVerticalPosition.Margin, 100, 200, 100, WrapType.Square);
 
-            doc.Save(MyDir + @"\Artifacts\Document.InsertedChartRelativePosition.doc");
+            doc.Save(MyDir + "Artifacts/Document.InsertedChartRelativePosition.doc");
             //ExEnd
         }
 
@@ -2049,7 +2049,7 @@ namespace NUnit.Tests.Android
             builder.Write("This field was inserted/updated at ");
             builder.InsertField(FieldType.FieldTime, true);
 
-            doc.Save(MyDir + @"\Artifacts\Document.InsertedField.doc");
+            doc.Save(MyDir + "Artifacts/Document.InsertedField.doc");
             //ExEnd
         }
 

@@ -79,7 +79,7 @@ namespace NUnit.Tests.Android
             // End the bulleted list.
             builder.ListFormat.RemoveNumbers();
 
-            builder.Document.Save(MyDir + @"\Artifacts\Lists.ApplyDefaultBulletsAndNumbers.doc");
+            builder.Document.Save(MyDir + "Artifacts/Lists.ApplyDefaultBulletsAndNumbers.doc");
             //ExEnd
         }
 
@@ -124,7 +124,7 @@ namespace NUnit.Tests.Android
             // This is a way to stop list formatting. 
             builder.ListFormat.List = null;
 
-            builder.Document.Save(MyDir + @"\Artifacts\Lists.SpecifyListLevel.doc");
+            builder.Document.Save(MyDir + "Artifacts/Lists.SpecifyListLevel.doc");
             //ExEnd
         }
 
@@ -169,7 +169,7 @@ namespace NUnit.Tests.Android
 
             builder.ParagraphFormat.ClearFormatting();
 
-            builder.Document.Save(MyDir + @"\Artifacts\Lists.NestedLists.doc");
+            builder.Document.Save(MyDir + "Artifacts/Lists.NestedLists.doc");
             //ExEnd
         }
 
@@ -240,7 +240,7 @@ namespace NUnit.Tests.Android
 
             builder.ListFormat.RemoveNumbers();
 
-            builder.Document.Save(MyDir + @"\Artifacts\Lists.CreateCustomList.doc");
+            builder.Document.Save(MyDir + "Artifacts/Lists.CreateCustomList.doc");
             //ExEnd
         }
 
@@ -286,7 +286,7 @@ namespace NUnit.Tests.Android
             builder.Writeln("Item 2");
             builder.ListFormat.RemoveNumbers();
 
-            builder.Document.Save(MyDir + @"\Artifacts\Lists.RestartNumberingUsingListCopy.doc");
+            builder.Document.Save(MyDir + "Artifacts/Lists.RestartNumberingUsingListCopy.doc");
             //ExEnd
         }
 
@@ -359,7 +359,7 @@ namespace NUnit.Tests.Android
             builder.Writeln("Item 2");
             builder.ListFormat.RemoveNumbers();
 
-            builder.Document.Save(MyDir + @"\Artifacts\Lists.CreateAndUseListStyle.doc");
+            builder.Document.Save(MyDir + "Artifacts/Lists.CreateAndUseListStyle.doc");
             //ExEnd
 
             // Verify properties of list 1
@@ -488,7 +488,7 @@ namespace NUnit.Tests.Android
             list = doc.Lists.Add(ListTemplate.OutlineHeadingsChapter);
             AddOutlineHeadingParagraphs(builder, list, "Aspose.Words Outline 4");
 
-            builder.Document.Save(MyDir + @"\Artifacts\Lists.OutlineHeadingTemplates.doc");
+            builder.Document.Save(MyDir + "Artifacts/Lists.OutlineHeadingTemplates.doc");
         }
 
         private static void AddOutlineHeadingParagraphs(DocumentBuilder builder, Aspose.Words.Lists.List list, String title)
@@ -532,7 +532,7 @@ namespace NUnit.Tests.Android
                 AddListSample(builder, dstList);
             }
 
-            dstDoc.Save(MyDir + @"\Artifacts\Lists.PrintOutAllLists.doc");
+            dstDoc.Save(MyDir + "Artifacts/Lists.PrintOutAllLists.doc");
         }
 
         private static void AddListSample(DocumentBuilder builder, Aspose.Words.Lists.List list)
@@ -658,7 +658,7 @@ namespace NUnit.Tests.Android
 
             builder.ListFormat.RemoveNumbers();
 
-            builder.Document.Save(MyDir + @"\Artifacts\Lists.CreateListRestartAfterHigher.doc");
+            builder.Document.Save(MyDir + "Artifacts/Lists.CreateListRestartAfterHigher.doc");
             //ExEnd
         }
 
@@ -696,7 +696,7 @@ namespace NUnit.Tests.Android
             builder.ParagraphFormat.Style = doc.Styles["Normal"];
             builder.Writeln("Hello World: Normal.");
 
-            builder.Document.Save(MyDir + @"\Artifacts\Lists.ParagraphStyleBulleted.doc");
+            builder.Document.Save(MyDir + "Artifacts/Lists.ParagraphStyleBulleted.doc");
             //ExEnd
         }
 

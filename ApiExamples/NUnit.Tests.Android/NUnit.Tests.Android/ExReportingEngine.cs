@@ -77,9 +77,9 @@ namespace NUnit.Tests.Android
 
             BuildReport(doc, Common.GetContracts(), "Contracts");
 
-            doc.Save(MyDir + @"\Artifacts\ReportingEngine.TestDataTable.docx");
+            doc.Save(MyDir + "Artifacts/ReportingEngine.TestDataTable.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + @"\Artifacts\ReportingEngine.TestDataTable.docx", MyDir + @"\Golds\ReportingEngine.TestDataTable Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.TestDataTable.docx", MyDir + "Golds/ReportingEngine.TestDataTable Gold.docx"));
         }
 
         [Test]
@@ -89,9 +89,9 @@ namespace NUnit.Tests.Android
 
             BuildReport(doc, Common.GetContracts(), "Contracts");
 
-            doc.Save(MyDir + @"\Artifacts\ReportingEngine.Total.docx");
+            doc.Save(MyDir + "Artifacts/ReportingEngine.Total.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + @"\Artifacts\ReportingEngine.Total.docx", MyDir + @"\Golds\ReportingEngine.Total Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.Total.docx", MyDir + "Golds/ReportingEngine.Total Gold.docx"));
         }
 
         [Test]
@@ -101,9 +101,9 @@ namespace NUnit.Tests.Android
 
             BuildReport(doc, Common.GetManagers(), "Managers");
 
-            doc.Save(MyDir + @"\Artifacts\ReportingEngine.TestNestedDataTable.docx");
+            doc.Save(MyDir + "Artifacts/ReportingEngine.TestNestedDataTable.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + @"\Artifacts\ReportingEngine.TestNestedDataTable.docx", MyDir + @"\Golds\ReportingEngine.TestNestedDataTable Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.TestNestedDataTable.docx", MyDir + "Golds/ReportingEngine.TestNestedDataTable Gold.docx"));
         }
 
         [Test]
@@ -113,9 +113,9 @@ namespace NUnit.Tests.Android
             
             BuildReport(doc, Common.GetManagers(), "managers");
 
-            doc.Save(MyDir + @"\Artifacts\ReportingEngine.TestChart.docx");
+            doc.Save(MyDir + "Artifacts/ReportingEngine.TestChart.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + @"\Artifacts\ReportingEngine.TestChart.docx", MyDir + @"\Golds\ReportingEngine.TestChart Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.TestChart.docx", MyDir + "Golds/ReportingEngine.TestChart Gold.docx"));
         }
 
         [Test]
@@ -125,9 +125,9 @@ namespace NUnit.Tests.Android
             
             BuildReport(doc, Common.GetManagers(), "managers");
 
-            doc.Save(MyDir + @"\Artifacts\ReportingEngine.TestBubbleChart.docx");
+            doc.Save(MyDir + "Artifacts/ReportingEngine.TestBubbleChart.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + @"\Artifacts\ReportingEngine.TestBubbleChart.docx", MyDir + @"\Golds\ReportingEngine.TestBubbleChart Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.TestBubbleChart.docx", MyDir + "Golds/ReportingEngine.TestBubbleChart Gold.docx"));
         }
 
         [Test]
@@ -139,9 +139,9 @@ namespace NUnit.Tests.Android
 
             BuildReport(doc, new object[] { Common.GetManagers(), condition }, new[] { "managers", "condition" });
 
-            doc.Save(MyDir + @"\Artifacts\ReportingEngine.TestLeaveChartSeries.docx");
+            doc.Save(MyDir + "Artifacts/ReportingEngine.TestLeaveChartSeries.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + @"\Artifacts\ReportingEngine.TestLeaveChartSeries.docx", MyDir + @"\Golds\ReportingEngine.TestLeaveChartSeries Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.TestLeaveChartSeries.docx", MyDir + "Golds/ReportingEngine.TestLeaveChartSeries Gold.docx"));
         }
 
         [Test]
@@ -153,9 +153,9 @@ namespace NUnit.Tests.Android
 
             BuildReport(doc, new object[] { Common.GetManagers(), condition }, new[] { "managers", "condition" });
 
-            doc.Save(MyDir + @"\Artifacts\ReportingEngine.TestRemoveChartSeries.docx");
+            doc.Save(MyDir + "Artifacts/ReportingEngine.TestRemoveChartSeries.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + @"\Artifacts\ReportingEngine.TestRemoveChartSeries.docx", MyDir + @"\Golds\ReportingEngine.TestRemoveChartSeries Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.TestRemoveChartSeries.docx", MyDir + "Golds/ReportingEngine.TestRemoveChartSeries Gold.docx"));
         }
 
         [Test]
@@ -204,9 +204,9 @@ namespace NUnit.Tests.Android
             
             BuildReport(doc, Common.GetManagers(), "Managers");
 
-            doc.Save(MyDir + @"\Artifacts\ReportingEngine.ExtensionMethods.docx");
+            doc.Save(MyDir + "Artifacts/ReportingEngine.ExtensionMethods.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + @"\Artifacts\ReportingEngine.ExtensionMethods.docx", MyDir + @"\Golds\ReportingEngine.ExtensionMethods Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.ExtensionMethods.docx", MyDir + "Golds/ReportingEngine.ExtensionMethods Gold.docx"));
         }
 
         [Test]
@@ -220,9 +220,9 @@ namespace NUnit.Tests.Android
             report.KnownTypes.Add(typeof(NumericTestBuilder));
             report.BuildReport(doc, testData, "ds");
 
-            doc.Save(MyDir + @"\Artifacts\ReportingEngine.Operators.docx");
+            doc.Save(MyDir + "Artifacts/ReportingEngine.Operators.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + @"\Artifacts\ReportingEngine.Operators.docx", MyDir + @"\Golds\ReportingEngine.Operators Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.Operators.docx", MyDir + "Golds/ReportingEngine.Operators Gold.docx"));
         }
 
         [Test]
@@ -232,9 +232,9 @@ namespace NUnit.Tests.Android
             
             BuildReport(doc, Common.GetManagers(), "Managers");
 
-            doc.Save(MyDir + @"\Artifacts\ReportingEngine.ContextualObjectMemberAccess.docx");
+            doc.Save(MyDir + "Artifacts/ReportingEngine.ContextualObjectMemberAccess.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + @"\Artifacts\ReportingEngine.ContextualObjectMemberAccess.docx", MyDir + @"\Golds\ReportingEngine.ContextualObjectMemberAccess Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.ContextualObjectMemberAccess.docx", MyDir + "Golds/ReportingEngine.ContextualObjectMemberAccess Gold.docx"));
         }
 
         [Test]
@@ -245,9 +245,9 @@ namespace NUnit.Tests.Android
             DocumentTestClass doc = new DocumentTestBuilder().WithDocument(new Document(MyDir + "ReportingEngine.TestDataTable.docx")).Build();
 
             BuildReport(template, doc, "src", ReportBuildOptions.None);
-            template.Save(MyDir + @"\Artifacts\ReportingEngine.InsertDocumentDinamically.docx");
+            template.Save(MyDir + "Artifacts/ReportingEngine.InsertDocumentDinamically.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + @"\Artifacts\ReportingEngine.InsertDocumentDinamically.docx", MyDir + @"\Golds\ReportingEngine.InsertDocumentDinamically(stream,doc,bytes) Gold.docx"), "Fail inserting document by document");
+            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.InsertDocumentDinamically.docx", MyDir + "Golds/ReportingEngine.InsertDocumentDinamically(stream,doc,bytes) Gold.docx"), "Fail inserting document by document");
         }
 
         [Test]
@@ -258,9 +258,9 @@ namespace NUnit.Tests.Android
             DocumentTestClass docStream = new DocumentTestBuilder().WithDocumentStream(new FileStream(mDocument, FileMode.Open, FileAccess.Read)).Build();
 
             BuildReport(template, docStream, "src", ReportBuildOptions.None);
-            template.Save(MyDir + @"\Artifacts\ReportingEngine.InsertDocumentDinamically.docx");
+            template.Save(MyDir + "Artifacts/ReportingEngine.InsertDocumentDinamically.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + @"\Artifacts\ReportingEngine.InsertDocumentDinamically.docx", MyDir + @"\Golds\ReportingEngine.InsertDocumentDinamically(stream,doc,bytes) Gold.docx"), "Fail inserting document by stream");
+            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.InsertDocumentDinamically.docx", MyDir + "Golds/ReportingEngine.InsertDocumentDinamically(stream,doc,bytes) Gold.docx"), "Fail inserting document by stream");
         }
 
         [Test]
@@ -271,9 +271,9 @@ namespace NUnit.Tests.Android
             DocumentTestClass docBytes = new DocumentTestBuilder().WithDocumentBytes(File.ReadAllBytes(MyDir + "ReportingEngine.TestDataTable.docx")).Build();
 
             BuildReport(template, docBytes, "src", ReportBuildOptions.None);
-            template.Save(MyDir + @"\Artifacts\ReportingEngine.InsertDocumentDinamically.docx");
+            template.Save(MyDir + "Artifacts/ReportingEngine.InsertDocumentDinamically.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + @"\Artifacts\ReportingEngine.InsertDocumentDinamically.docx", MyDir + @"\Golds\ReportingEngine.InsertDocumentDinamically(stream,doc,bytes) Gold.docx"), "Fail inserting document by bytes");
+            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.InsertDocumentDinamically.docx", MyDir + "Golds/ReportingEngine.InsertDocumentDinamically(stream,doc,bytes) Gold.docx"), "Fail inserting document by bytes");
         }
 
         [Test]
@@ -284,9 +284,9 @@ namespace NUnit.Tests.Android
             DocumentTestClass docUri = new DocumentTestBuilder().WithDocumentUri("http://www.snee.com/xml/xslt/sample.doc").Build();
 
             BuildReport(template, docUri, "src", ReportBuildOptions.None);
-            template.Save(MyDir + @"\Artifacts\ReportingEngine.InsertDocumentDinamically.docx");
+            template.Save(MyDir + "Artifacts/ReportingEngine.InsertDocumentDinamically.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + @"\Artifacts\ReportingEngine.InsertDocumentDinamically.docx", MyDir + @"\Golds\ReportingEngine.InsertDocumentDinamically(uri) Gold.docx"), "Fail inserting document by uri");
+            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.InsertDocumentDinamically.docx", MyDir + "Golds/ReportingEngine.InsertDocumentDinamically(uri) Gold.docx"), "Fail inserting document by uri");
         }
 
         [Test]
@@ -296,9 +296,9 @@ namespace NUnit.Tests.Android
             ImageTestClass image = new ImageTestBuilder().WithImage(SKBitmap.Decode(mImage)).Build();
 
             BuildReport(template, image, "src", ReportBuildOptions.None);
-            template.Save(MyDir + @"\Artifacts\ReportingEngine.InsertImageDinamically.docx");
+            template.Save(MyDir + "Artifacts/ReportingEngine.InsertImageDinamically.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + @"\Artifacts\ReportingEngine.InsertImageDinamically.docx", MyDir + @"\Golds\ReportingEngine.InsertImageDinamically(stream,doc,bytes) Gold.docx"), "Fail inserting document by bytes");
+            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.InsertImageDinamically.docx", MyDir + "Golds/ReportingEngine.InsertImageDinamically(stream,doc,bytes) Gold.docx"), "Fail inserting document by bytes");
         }
 
         [Test]
@@ -308,9 +308,9 @@ namespace NUnit.Tests.Android
             ImageTestClass imageStream = new ImageTestBuilder().WithImageStream(new FileStream(mImage, FileMode.Open, FileAccess.Read)).Build();
 
             BuildReport(template, imageStream, "src", ReportBuildOptions.None);
-            template.Save(MyDir + @"\Artifacts\ReportingEngine.InsertImageDinamically.docx");
+            template.Save(MyDir + "Artifacts/ReportingEngine.InsertImageDinamically.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + @"\Artifacts\ReportingEngine.InsertImageDinamically.docx", MyDir + @"\Golds\ReportingEngine.InsertImageDinamically(stream,doc,bytes) Gold.docx"), "Fail inserting document by bytes");
+            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.InsertImageDinamically.docx", MyDir + "Golds/ReportingEngine.InsertImageDinamically(stream,doc,bytes) Gold.docx"), "Fail inserting document by bytes");
         }
 
         [Test]
@@ -320,9 +320,9 @@ namespace NUnit.Tests.Android
             ImageTestClass imageBytes = new ImageTestBuilder().WithImageBytes(File.ReadAllBytes(mImage)).Build();
 
             BuildReport(template, imageBytes, "src", ReportBuildOptions.None);
-            template.Save(MyDir + @"\Artifacts\ReportingEngine.InsertImageDinamically.docx");
+            template.Save(MyDir + "Artifacts/ReportingEngine.InsertImageDinamically.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + @"\Artifacts\ReportingEngine.InsertImageDinamically.docx", MyDir + @"\Golds\ReportingEngine.InsertImageDinamically(stream,doc,bytes) Gold.docx"), "Fail inserting document by bytes");
+            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.InsertImageDinamically.docx", MyDir + "Golds/ReportingEngine.InsertImageDinamically(stream,doc,bytes) Gold.docx"), "Fail inserting document by bytes");
         }
 
         [Test]
@@ -332,9 +332,9 @@ namespace NUnit.Tests.Android
             ImageTestClass imageUri = new ImageTestBuilder().WithImageUri("http://joomla-aspose.dynabic.com/templates/aspose/App_Themes/V3/images/customers/americanexpress.png").Build();
 
             BuildReport(template, imageUri, "src", ReportBuildOptions.None);
-            template.Save(MyDir + @"\Artifacts\ReportingEngine.InsertImageDinamically.docx");
+            template.Save(MyDir + "Artifacts/ReportingEngine.InsertImageDinamically.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + @"\Artifacts\ReportingEngine.InsertImageDinamically.docx", MyDir + @"\Golds\ReportingEngine.InsertImageDinamically(uri) Gold.docx"), "Fail inserting document by bytes");
+            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.InsertImageDinamically.docx", MyDir + "Golds/ReportingEngine.InsertImageDinamically(uri) Gold.docx"), "Fail inserting document by bytes");
         }
 
         [Test]
@@ -366,9 +366,9 @@ namespace NUnit.Tests.Android
             engine.KnownTypes.Add(typeof(DateTime));
             engine.BuildReport(doc, "");
 
-            doc.Save(MyDir + @"\Artifacts\ReportingEngine.KnownTypes.docx");
+            doc.Save(MyDir + "Artifacts/ReportingEngine.KnownTypes.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + @"\Artifacts\ReportingEngine.KnownTypes.docx", MyDir + @"\Golds\ReportingEngine.KnownTypes Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.KnownTypes.docx", MyDir + "Golds/ReportingEngine.KnownTypes Gold.docx"));
         }
 
         [Test]
@@ -523,9 +523,9 @@ namespace NUnit.Tests.Android
 
             BuildReport(doc, colors, "Colors");
 
-            doc.Save(MyDir + @"\Artifacts\ReportingEngine.BackColor.docx");
+            doc.Save(MyDir + "Artifacts/ReportingEngine.BackColor.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + @"\Artifacts\ReportingEngine.BackColor.docx", MyDir + @"\Golds\ReportingEngine.BackColor Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/ReportingEngine.BackColor.docx", MyDir + "Golds/ReportingEngine.BackColor Gold.docx"));
         }
 
         private static void BuildReport(Document document, object dataSource, string dataSourceName, ReportBuildOptions reportBuildOptions)

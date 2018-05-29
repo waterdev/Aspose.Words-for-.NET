@@ -96,7 +96,7 @@ namespace NUnit.Tests.Android
             //ExFor:Document.Save(String)
             //ExId:SaveToFile
             //ExSummary:Saves a document to a file.
-            doc.Save(MyDir + @"\Artifacts\Document.OpenFromFile.doc");
+            doc.Save(MyDir + "Artifacts/Document.OpenFromFile.doc");
             //ExEnd
         }
 
@@ -107,7 +107,7 @@ namespace NUnit.Tests.Android
             //ExId:OpenAndSaveToFile
             //ExSummary:Opens a document from a file and saves it to a different format
             Document doc = new Document(MyDir + "Document.doc");
-            doc.Save(MyDir + @"\Artifacts\Document.html");
+            doc.Save(MyDir + "Artifacts/Document.html");
             //ExEnd
         }
 
@@ -165,7 +165,7 @@ namespace NUnit.Tests.Android
             stream.Close();
 
             // Save in the DOC format.
-            doc.Save(MyDir + @"\Artifacts\Document.OpenFromStreamWithBaseUri.doc");
+            doc.Save(MyDir + "Artifacts/Document.OpenFromStreamWithBaseUri.doc");
             //ExEnd
 
             // Lets make sure the image was imported successfully into a Shape node.
@@ -205,7 +205,7 @@ namespace NUnit.Tests.Android
             Document doc = new Document(byteStream);
 
             // Convert the document to any format supported by Aspose.Words.
-            doc.Save(MyDir + @"\Artifacts\Document.OpenFromWeb.docx");
+            doc.Save(MyDir + "Artifacts/Document.OpenFromWeb.docx");
             //ExEnd
         }
 
@@ -240,7 +240,7 @@ namespace NUnit.Tests.Android
 
             // Save the document to disk.
             // The extension of the filename can be changed to save the document into other formats. e.g PDF, DOCX, ODT, RTF.
-            doc.Save(MyDir + @"\Artifacts\Document.HtmlPageFromWebpage.doc");
+            doc.Save(MyDir + "Artifacts/Document.HtmlPageFromWebpage.doc");
             //ExEnd
         }
 
@@ -305,7 +305,7 @@ namespace NUnit.Tests.Android
             //ExSummary:Converts from DOC to HTML format.
             Document doc = new Document(MyDir + "Document.doc");
 
-            doc.Save(MyDir + @"\Artifacts\Document.ConvertToHtml.html", SaveFormat.Html);
+            doc.Save(MyDir + "Artifacts/Document.ConvertToHtml.html", SaveFormat.Html);
             //ExEnd
         }
 
@@ -317,7 +317,7 @@ namespace NUnit.Tests.Android
             //ExSummary:Converts from DOC to MHTML format.
             Document doc = new Document(MyDir + "Document.doc");
 
-            doc.Save(MyDir + @"\Artifacts\Document.ConvertToMhtml.mht");
+            doc.Save(MyDir + "Artifacts/Document.ConvertToMhtml.mht");
             //ExEnd
         }
 
@@ -329,7 +329,7 @@ namespace NUnit.Tests.Android
             //ExSummary:Shows how to save a document in TXT format.
             Document doc = new Document(MyDir + "Document.doc");
 
-            doc.Save(MyDir + @"\Artifacts\Document.ConvertToTxt.txt");
+            doc.Save(MyDir + "Artifacts/Document.ConvertToTxt.txt");
             //ExEnd
         }
 
@@ -343,7 +343,7 @@ namespace NUnit.Tests.Android
             //ExSummary:Converts a whole document from DOC to PDF using default options.
             Document doc = new Document(MyDir + "Document.doc");
 
-            doc.Save(MyDir + @"\Artifacts\Document.Doc2PdfSave.pdf");
+            doc.Save(MyDir + "Artifacts/Document.Doc2PdfSave.pdf");
             //ExEnd
         }
 
@@ -375,7 +375,7 @@ namespace NUnit.Tests.Android
             Document doc = new Document(MyDir + "Document.EpubConversion.doc");
 
             // Save the document in EPUB format.
-            doc.Save(MyDir + @"\Artifacts\Document.EpubConversion.epub");
+            doc.Save(MyDir + "Artifacts/Document.EpubConversion.epub");
             //ExEnd
         }
 
@@ -413,7 +413,7 @@ namespace NUnit.Tests.Android
             saveOptions.SaveFormat = SaveFormat.Epub;
 
             // Export the document as an EPUB file.
-            doc.Save(MyDir + @"\Artifacts\Document.EpubConversion.epub", saveOptions);
+            doc.Save(MyDir + "Artifacts/Document.EpubConversion.epub", saveOptions);
             //ExEnd
         }
 
@@ -430,7 +430,7 @@ namespace NUnit.Tests.Android
             // If this is setting is false (by default) then the HTML tags will be exported in condensed form with no indentation.
             htmlOptions.PrettyFormat = true;
 
-            doc.Save(MyDir + @"\Artifacts\Document.PrettyFormat.html", htmlOptions);
+            doc.Save(MyDir + "Artifacts/Document.PrettyFormat.html", htmlOptions);
             //ExEnd
         }
 
@@ -459,11 +459,11 @@ namespace NUnit.Tests.Android
             options.ExportTextInputFormFieldAsText = true;
             options.ImagesFolder = imagesDir;
 
-            doc.Save(MyDir + @"\Artifacts\Document.SaveWithOptions.html", options);
+            doc.Save(MyDir + "Artifacts/Document.SaveWithOptions.html", options);
             //ExEnd
 
             // Verify the images were saved to the correct location.
-            Assert.IsTrue(File.Exists(MyDir + @"\Artifacts\Document.SaveWithOptions.html"));
+            Assert.IsTrue(File.Exists(MyDir + "Artifacts/Document.SaveWithOptions.html"));
             Assert.AreEqual(9, Directory.GetFiles(imagesDir).Length);
 
             Directory.Delete(imagesDir, true);
@@ -490,7 +490,7 @@ namespace NUnit.Tests.Android
             // Create and pass the object which implements the handler methods.
             options.FontSavingCallback = new HandleFontSaving();
 
-            doc.Save(MyDir + @"\Artifacts\Document.SaveWithFontsExport.html", options);
+            doc.Save(MyDir + "Artifacts/Document.SaveWithFontsExport.html", options);
         }
 
         public class HandleFontSaving : IFontSavingCallback
@@ -521,7 +521,7 @@ namespace NUnit.Tests.Android
             HtmlSaveOptions options = new HtmlSaveOptions(SaveFormat.Html);
             options.ImageSavingCallback = new HandleImageSaving();
 
-            doc.Save(MyDir + @"\Artifacts\Document.SaveWithCustomImagesExport.html", options);
+            doc.Save(MyDir + "Artifacts/Document.SaveWithCustomImagesExport.html", options);
         }
 
         public class HandleImageSaving : IImageSavingCallback
@@ -559,7 +559,7 @@ namespace NUnit.Tests.Android
             // Insert sample HTML content
             builder.InsertHtml("<p>Hello World</p>");
 
-            doc.Save(MyDir + @"\Artifacts\Document.FontChanger.doc");
+            doc.Save(MyDir + "Artifacts/Document.FontChanger.doc");
 
             // Check that the inserted content has the correct formatting
             Run run = (Run)doc.GetChild(NodeType.Run, 0, true);
@@ -652,7 +652,7 @@ namespace NUnit.Tests.Android
             Document doc = new Document(docStream);
 
             // Save the document with the original file name, " Out" and the document's file extension.
-            doc.Save(MyDir + @"\Artifacts\Document.WithFileExtension" + FileFormatUtil.SaveFormatToExtension(saveFormat));
+            doc.Save(MyDir + "Artifacts/Document.WithFileExtension" + FileFormatUtil.SaveFormatToExtension(saveFormat));
             //ExEnd
 
             Assert.AreEqual(".doc", FileFormatUtil.SaveFormatToExtension(saveFormat));
@@ -691,7 +691,7 @@ namespace NUnit.Tests.Android
             dstDoc.AppendDocument(srcDoc, ImportFormatMode.KeepSourceFormatting);
 
             // Save the document.
-            dstDoc.Save(MyDir + @"\Artifacts\Document.AppendDocument.doc");
+            dstDoc.Save(MyDir + "Artifacts/Document.AppendDocument.doc");
             //ExEnd
         }
 
@@ -832,14 +832,14 @@ namespace NUnit.Tests.Android
             options.DigitalSignatureDetails = new PdfDigitalSignatureDetails(certificateHolder, "Test Signing", "Aspose Office", DateTime.Now);
 
             // Save the document as PDF with the digital signature set.
-            doc.Save(MyDir + @"\Artifacts\Document.Signed.pdf", options);
+            doc.Save(MyDir + "Artifacts/Document.Signed.pdf", options);
             //ExEnd
         }
 
         [Test]
         public void AppendAllDocumentsInFolder()
         {
-            String path = MyDir + @"\Artifacts\Document.AppendDocumentsFromFolder.doc";
+            String path = MyDir + "Artifacts/Document.AppendDocumentsFromFolder.doc";
 
             // Delete the file that was created by the previous run as I don't want to append it again.
             if (File.Exists(path))
@@ -905,7 +905,7 @@ namespace NUnit.Tests.Android
             Console.WriteLine("Number of runs before:{0}, after:{1}, joined:{2}", runsBefore, runsAfter, joinCount);
 
             // Save the optimized document to disk.
-            doc.Save(MyDir + @"\Artifacts\Document.JoinRunsWithSameFormatting.html");
+            doc.Save(MyDir + "Artifacts/Document.JoinRunsWithSameFormatting.html");
             //ExEnd
 
             // Verify that runs were joined in the document.
@@ -922,7 +922,7 @@ namespace NUnit.Tests.Android
             Document doc = new Document(MyDir + "Document.doc");
 
             doc.AttachedTemplate = "";
-            doc.Save(MyDir + @"\Artifacts\Document.DetachTemplate.doc");
+            doc.Save(MyDir + "Artifacts/Document.DetachTemplate.doc");
             //ExEnd
         }
 
@@ -1223,7 +1223,7 @@ namespace NUnit.Tests.Android
             Console.WriteLine("Cell shading after style expansion: " + cellShadingAfter);
             //ExEnd
 
-            doc.Save(MyDir + @"\Artifacts\Table.ExpandTableStyleFormatting.docx");
+            doc.Save(MyDir + "Artifacts/Table.ExpandTableStyleFormatting.docx");
 
             Assert.AreEqual(0.0d, cellShadingBefore);
             Assert.AreEqual(0.0d, cellShadingAfter);
@@ -1273,7 +1273,7 @@ namespace NUnit.Tests.Android
             Document doc = new Document(MyDir + "Document.doc");
             doc.ViewOptions.ViewType = ViewType.PageLayout;
             doc.ViewOptions.ZoomPercent = 50;
-            doc.Save(MyDir + @"\Artifacts\Document.SetZoom.doc");
+            doc.Save(MyDir + "Artifacts/Document.SetZoom.doc");
             //ExEnd
         }
 
@@ -1309,10 +1309,10 @@ namespace NUnit.Tests.Android
             // Lets change number of columns for footnotes on page. If columns value is 0 than footnotes area is formatted with a number of columns based on
             // the number of columns on the displayed page
             doc.FootnoteOptions.Columns = 2;
-            doc.Save(MyDir + @"\Artifacts\Document.FootnoteOptions.docx");
+            doc.Save(MyDir + "Artifacts/Document.FootnoteOptions.docx");
 
             //Assert that number of columns gets correct
-            doc = new Document(MyDir + @"\Artifacts\Document.FootnoteOptions.docx");
+            doc = new Document(MyDir + "Artifacts/Document.FootnoteOptions.docx");
             Assert.AreEqual(2, doc.FirstSection.PageSetup.FootnoteOptions.Columns);
         }
 
@@ -1433,7 +1433,7 @@ namespace NUnit.Tests.Android
             doc1.Revisions.AcceptAll();
 
             // doc1, when saved, now resembles doc2.
-            doc1.Save(MyDir + @"\Artifacts\Document.Compare.doc");
+            doc1.Save(MyDir + "Artifacts/Document.Compare.doc");
             //ExEnd
         }
 
@@ -1454,10 +1454,10 @@ namespace NUnit.Tests.Android
 
             doc1.Compare(doc2, "vderyushev", DateTime.Now, compareOptions);
 
-            doc1.Save(MyDir + @"\Artifacts\Document.CompareOptions.docx");
+            doc1.Save(MyDir + "Artifacts/Document.CompareOptions.docx");
             //ExEnd
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + @"\Artifacts\Document.CompareOptions.docx", MyDir + @"\Golds\Document.CompareOptions Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/Document.CompareOptions.docx", MyDir + "Golds/Document.CompareOptions Gold.docx"));
         }
 
         [Test]
@@ -1473,9 +1473,9 @@ namespace NUnit.Tests.Android
 
             doc1.Compare(doc2, "vderyushev", DateTime.Now, compareOptions);
 
-            doc1.Save(MyDir + @"\Artifacts\Document.UseCurrentDocumentFormatting.docx");
+            doc1.Save(MyDir + "Artifacts/Document.UseCurrentDocumentFormatting.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + @"\Artifacts\Document.UseCurrentDocumentFormatting.docx", MyDir + @"\Golds\Document.UseCurrentDocumentFormatting Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/Document.UseCurrentDocumentFormatting.docx", MyDir + "Golds/Document.UseCurrentDocumentFormatting Gold.docx"));
         }
 
         [Test]
@@ -1552,7 +1552,7 @@ namespace NUnit.Tests.Android
             doc.FirstSection.Body.AppendParagraph("Hello again!");
             Console.WriteLine(doc.Revisions.Count); // 4
 
-            doc.Save(MyDir + @"\Artifacts\Document.StartTrackRevisions.doc");
+            doc.Save(MyDir + "Artifacts/Document.StartTrackRevisions.doc");
             //ExEnd
         }
 
@@ -1568,7 +1568,7 @@ namespace NUnit.Tests.Android
             doc.LayoutOptions.RevisionOptions.ShowRevisionBalloons = true;
 
             //Check that revisions are in balloons 
-            doc.Save(MyDir + @"\Artifacts\ShowRevisionBalloons.pdf");
+            doc.Save(MyDir + "Artifacts/ShowRevisionBalloons.pdf");
             //ExEnd
         }
 
@@ -1586,7 +1586,7 @@ namespace NUnit.Tests.Android
 
             // Revisions will now show up as normal text in the output document.
             doc.AcceptAllRevisions();
-            doc.Save(MyDir + @"\Artifacts\Document.AcceptedRevisions.doc");
+            doc.Save(MyDir + "Artifacts/Document.AcceptedRevisions.doc");
             //ExEnd
         }
 
@@ -1634,7 +1634,7 @@ namespace NUnit.Tests.Android
             doc.HyphenationOptions.HyphenationZone = 720; // 0.5 inch
             doc.HyphenationOptions.HyphenateCaps = true;
 
-            doc.Save(MyDir + @"\Artifacts\HyphenationOptions.docx");
+            doc.Save(MyDir + "Artifacts/HyphenationOptions.docx");
             //ExEnd
 
             Assert.AreEqual(true, doc.HyphenationOptions.AutoHyphenation);
@@ -1642,7 +1642,7 @@ namespace NUnit.Tests.Android
             Assert.AreEqual(720, doc.HyphenationOptions.HyphenationZone);
             Assert.AreEqual(true, doc.HyphenationOptions.HyphenateCaps);
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + @"\Artifacts\HyphenationOptions.docx", MyDir + @"\Golds\Document.HyphenationOptions Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/HyphenationOptions.docx", MyDir + "Golds/Document.HyphenationOptions Gold.docx"));
         }
 
         [Test]

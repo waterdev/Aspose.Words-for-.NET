@@ -39,7 +39,7 @@ namespace NUnit.Tests.Android
             //Define which page will save
             saveOptions.PageIndex = 0;
 
-            doc.Save(MyDir + @"\Artifacts\SaveOptions.MyraidPro Out.gif", saveOptions);
+            doc.Save(MyDir + "Artifacts/SaveOptions.MyraidPro Out.gif", saveOptions);
             //ExEnd
         }
 
@@ -60,7 +60,7 @@ namespace NUnit.Tests.Android
         //    ImageSaveOptions saveOptions = new ImageSaveOptions(SaveFormat.Jpeg);
         //    saveOptions.GraphicsQualityOptions = qualityOptions;
 
-        //    doc.Save(MyDir + @"\Artifacts\SaveOptions.QualityOptions Out.jpeg", saveOptions);
+        //    doc.Save(MyDir + "Artifacts/SaveOptions.QualityOptions Out.jpeg", saveOptions);
         //    //ExEnd
         //}
 
@@ -77,7 +77,7 @@ namespace NUnit.Tests.Android
             imageSaveOptions.ImageColorMode = ImageColorMode.BlackAndWhite;
             imageSaveOptions.PixelFormat = ImagePixelFormat.Format1bppIndexed;
             
-            doc.Save(MyDir + @"\Artifacts\ImageSaveOptions.BlackAndWhite Out.png", imageSaveOptions);
+            doc.Save(MyDir + "Artifacts/ImageSaveOptions.BlackAndWhite Out.png", imageSaveOptions);
             //ExEnd
         }
     }

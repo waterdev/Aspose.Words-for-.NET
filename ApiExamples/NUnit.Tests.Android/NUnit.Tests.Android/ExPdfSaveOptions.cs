@@ -48,7 +48,7 @@ namespace NUnit.Tests.Android
             pdfSaveOptions.OutlineOptions.CreateMissingOutlineLevels = true;
             pdfSaveOptions.SaveFormat = SaveFormat.Pdf;
 
-            doc.Save(MyDir + @"\Artifacts\CreateMissingOutlineLevels.pdf", pdfSaveOptions);
+            doc.Save(MyDir + "Artifacts/CreateMissingOutlineLevels.pdf", pdfSaveOptions);
             //ExEnd
         }
 
@@ -66,7 +66,7 @@ namespace NUnit.Tests.Android
             PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
             pdfSaveOptions.DmlRenderingMode = DmlRenderingMode.DrawingML;
 
-            doc.Save(MyDir + @"\Artifacts\DrawingMl.pdf", pdfSaveOptions);
+            doc.Save(MyDir + "Artifacts/DrawingMl.pdf", pdfSaveOptions);
             //ExEnd
         }
 
@@ -81,7 +81,7 @@ namespace NUnit.Tests.Android
             PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
             pdfSaveOptions.UpdateFields = false;
 
-            doc.Save(MyDir + @"\Artifacts\UpdateFields_False.pdf", pdfSaveOptions);
+            doc.Save(MyDir + "Artifacts/UpdateFields_False.pdf", pdfSaveOptions);
             //ExEnd
         }
 
@@ -93,7 +93,7 @@ namespace NUnit.Tests.Android
             PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
             pdfSaveOptions.UpdateFields = true;
 
-            doc.Save(MyDir + @"\Artifacts\UpdateFields_False.pdf", pdfSaveOptions);
+            doc.Save(MyDir + "Artifacts/UpdateFields_False.pdf", pdfSaveOptions);
         }
 
         //ToDo: Add gold asserts for PDF files
@@ -116,14 +116,14 @@ namespace NUnit.Tests.Android
             options.ImageCompression = PdfImageCompression.Jpeg;
             options.PreserveFormFields = true;
 
-            doc.Save(MyDir + @"\Artifacts\SaveOptions.PdfImageCompression Out.pdf", options);
+            doc.Save(MyDir + "Artifacts/SaveOptions.PdfImageCompression Out.pdf", options);
 
             PdfSaveOptions optionsA1B = new PdfSaveOptions();
             optionsA1B.Compliance = PdfCompliance.PdfA1b;
             optionsA1B.ImageCompression = PdfImageCompression.Jpeg;
             optionsA1B.JpegQuality = 100; // Use JPEG compression at 50% quality to reduce file size.
 
-            doc.Save(MyDir + @"\Artifacts\SaveOptions.PdfImageComppression PDF_A_1_B Out.pdf", optionsA1B);
+            doc.Save(MyDir + "Artifacts/SaveOptions.PdfImageComppression PDF_A_1_B Out.pdf", optionsA1B);
             //ExEnd
 
             PdfSaveOptions optionsA1A = new PdfSaveOptions();
@@ -131,7 +131,7 @@ namespace NUnit.Tests.Android
             optionsA1A.ExportDocumentStructure = true;
             optionsA1A.ImageCompression = PdfImageCompression.Jpeg;
 
-            doc.Save(MyDir + @"\Artifacts\SaveOptions.PdfImageComppression PDF_A_1_A Out.pdf", optionsA1A);
+            doc.Save(MyDir + "Artifacts/SaveOptions.PdfImageComppression PDF_A_1_A Out.pdf", optionsA1A);
         }
 
         [Test]
@@ -148,7 +148,7 @@ namespace NUnit.Tests.Android
             pdfSaveOptions.ColorMode = ColorMode.Grayscale;
 
             // Assert that color image in document was grey
-            doc.Save(MyDir + @"\Artifacts\ColorMode.PdfGrayscaleMode.pdf", pdfSaveOptions);
+            doc.Save(MyDir + "Artifacts/ColorMode.PdfGrayscaleMode.pdf", pdfSaveOptions);
             //ExEnd
         }
 
@@ -164,7 +164,7 @@ namespace NUnit.Tests.Android
             PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
             pdfSaveOptions.DisplayDocTitle = true;
 
-            doc.Save(MyDir + @"\Artifacts\PdfTitle.pdf", pdfSaveOptions);
+            doc.Save(MyDir + "Artifacts/PdfTitle.pdf", pdfSaveOptions);
             //ExEnd
         }
 
@@ -181,7 +181,7 @@ namespace NUnit.Tests.Android
             SaveOptions saveOptions = SaveOptions.CreateSaveOptions(SaveFormat.Pdf);
             saveOptions.MemoryOptimization = true;
 
-            doc.Save(MyDir + @"\Artifacts\SaveOptions.MemoryOptimization Out.pdf", saveOptions);
+            doc.Save(MyDir + "Artifacts/SaveOptions.MemoryOptimization Out.pdf", saveOptions);
             //ExEnd
         }
 
@@ -207,7 +207,7 @@ namespace NUnit.Tests.Android
             PdfSaveOptions saveOptions = new PdfSaveOptions();
             saveOptions.MetafileRenderingOptions = metafileRenderingOptions;
             
-            doc.Save(MyDir + @"\Artifacts\PdfSaveOptions.HandleRasterWarnings.pdf", saveOptions);
+            doc.Save(MyDir + "Artifacts/PdfSaveOptions.HandleRasterWarnings.pdf", saveOptions);
 
             Assert.AreEqual(1, callback.mWarnings.Count);
             Assert.True(callback.mWarnings[0].Description.Contains("R2_XORPEN"));

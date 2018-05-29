@@ -30,14 +30,14 @@ namespace NUnit.Tests.Android
             DocumentBuilder builder = new DocumentBuilder();
 
             builder.Write("Image from local file: ");
-            builder.InsertImage(MyDir + @"\Images\Aspose.Words.gif");
+            builder.InsertImage(MyDir + "Images/Aspose.Words.gif");
             builder.Writeln();
 
             builder.Write("Image from an Internet url, automatically downloaded for you: ");
             builder.InsertImage("http://www.aspose.com/Images/aspose-logo.jpg");
             builder.Writeln();
 
-            builder.Document.Save(MyDir + @"\Artifacts\Image.CreateFromUrl.doc");
+            builder.Document.Save(MyDir + "Artifacts/Image.CreateFromUrl.doc");
             //ExEnd
         }
 
@@ -50,7 +50,7 @@ namespace NUnit.Tests.Android
             // This creates a builder and also an empty document inside the builder.
             DocumentBuilder builder = new DocumentBuilder();
 
-            Stream stream = File.OpenRead(MyDir + @"\Images\Aspose.Words.gif");
+            Stream stream = File.OpenRead(MyDir + "Images/Aspose.Words.gif");
             try
             {
                 builder.Write("Image from stream: ");
@@ -61,7 +61,7 @@ namespace NUnit.Tests.Android
                 stream.Close();
             }
 
-            builder.Document.Save(MyDir + @"\Artifacts\Image.CreateFromStream.doc");
+            builder.Document.Save(MyDir + "Artifacts/Image.CreateFromStream.doc");
             //ExEnd
         }
 
@@ -76,7 +76,7 @@ namespace NUnit.Tests.Android
             DocumentBuilder builder = new DocumentBuilder();
 
             // Insert a raster image.
-            using (SKBitmap rasterImage = SKBitmap.Decode(MyDir + @"\Images\Aspose.Words.gif"))
+            using (SKBitmap rasterImage = SKBitmap.Decode(MyDir + "Images/Aspose.Words.gif"))
             {
                 builder.Write("Raster image: ");
                 builder.InsertImage(rasterImage);
@@ -84,14 +84,14 @@ namespace NUnit.Tests.Android
             }
 
             // Aspose.Words do not allows to insert a metafile too, while SKBitmap does not allow it
-            using (SKBitmap metafile = SKBitmap.Decode(MyDir + @"\Images\Hammer.wmf"))
+            using (SKBitmap metafile = SKBitmap.Decode(MyDir + "Images/Hammer.wmf"))
             {
                 builder.Write("Metafile: ");
                 builder.InsertImage(metafile);
                 builder.Writeln();
             }
             
-            builder.Document.Save(MyDir + @"\Artifacts\Image.CreateFromImage.doc");
+            builder.Document.Save(MyDir + "Artifacts/Image.CreateFromImage.doc");
             //ExEnd
         }
 
@@ -118,7 +118,7 @@ namespace NUnit.Tests.Android
             DocumentBuilder builder = new DocumentBuilder();
 
             // By default, the image is inline.
-            Shape shape = builder.InsertImage(MyDir + @"\Images\Aspose.Words.gif");
+            Shape shape = builder.InsertImage(MyDir + "Images/Aspose.Words.gif");
 
             // Make the image float, put it behind text and center on the page.
             shape.WrapType = WrapType.None;
@@ -128,7 +128,7 @@ namespace NUnit.Tests.Android
             shape.RelativeVerticalPosition = RelativeVerticalPosition.Page;
             shape.VerticalAlignment = VerticalAlignment.Center;
 
-            builder.Document.Save(MyDir + @"\Artifacts\Image.CreateFloatingPageCenter.doc");
+            builder.Document.Save(MyDir + "Artifacts/Image.CreateFloatingPageCenter.doc");
             //ExEnd
         }
 
@@ -147,7 +147,7 @@ namespace NUnit.Tests.Android
             DocumentBuilder builder = new DocumentBuilder();
 
             // By default, the image is inline.
-            Shape shape = builder.InsertImage(MyDir + @"\Images\Hammer.wmf");
+            Shape shape = builder.InsertImage(MyDir + "Images/Hammer.wmf");
 
             // Make the image float, put it behind text and center on the page.
             shape.WrapType = WrapType.None;
@@ -162,7 +162,7 @@ namespace NUnit.Tests.Android
             shape.Width = builder.CurrentSection.PageSetup.PageWidth;
             shape.Height = 50;
 
-            builder.Document.Save(MyDir + @"\Artifacts\Image.CreateFloatingPositionSize.doc");
+            builder.Document.Save(MyDir + "Artifacts/Image.CreateFloatingPositionSize.doc");
             //ExEnd
         }
 
@@ -176,11 +176,11 @@ namespace NUnit.Tests.Android
             // This creates a builder and also an empty document inside the builder.
             DocumentBuilder builder = new DocumentBuilder();
 
-            Shape shape = builder.InsertImage(MyDir + @"\Images\Hammer.wmf");
+            Shape shape = builder.InsertImage(MyDir + "Images/Hammer.wmf");
             shape.HRef = "http://www.aspose.com/Community/Forums/75/ShowForum.aspx";
             shape.ScreenTip = "Aspose.Words Support Forums";
 
-            builder.Document.Save(MyDir + @"\Artifacts\Image.InsertImageWithHyperlink.doc");
+            builder.Document.Save(MyDir + "Artifacts/Image.InsertImageWithHyperlink.doc");
             //ExEnd
         }
 
@@ -194,13 +194,13 @@ namespace NUnit.Tests.Android
             Document doc = new Document();
 
             Shape shape = new Shape(doc, ShapeType.Image);
-            shape.ImageData.SetImage(MyDir + @"\Images\Hammer.wmf");
+            shape.ImageData.SetImage(MyDir + "Images/Hammer.wmf");
             shape.Width = 100;
             shape.Height = 100;
 
             doc.FirstSection.Body.FirstParagraph.AppendChild(shape);
 
-            doc.Save(MyDir + @"\Artifacts\Image.CreateImageDirectly.doc");
+            doc.Save(MyDir + "Artifacts/Image.CreateImageDirectly.doc");
             //ExEnd
         }
 
@@ -216,7 +216,7 @@ namespace NUnit.Tests.Android
             //ExSummary:Shows how to insert a linked image into a document. 
             DocumentBuilder builder = new DocumentBuilder();
 
-            string imageFileName = MyDir + @"\Images\Hammer.wmf";
+            string imageFileName = MyDir + "Images/Hammer.wmf";
 
             builder.Write("Image linked, not stored in the document: ");
 
@@ -246,7 +246,7 @@ namespace NUnit.Tests.Android
             builder.InsertNode(stored);
             builder.Writeln();
 
-            builder.Document.Save(MyDir + @"\Artifacts\Image.CreateLinkedImage.doc");
+            builder.Document.Save(MyDir + "Artifacts/Image.CreateLinkedImage.doc");
             //ExEnd
         }
 
@@ -280,7 +280,7 @@ namespace NUnit.Tests.Android
             //ExEnd
 
             Assert.AreEqual(1, doc.GetChildNodes(NodeType.Shape, true).Count);
-            doc.Save(MyDir + @"\Artifacts\Image.DeleteAllImages.doc");
+            doc.Save(MyDir + "Artifacts/Image.DeleteAllImages.doc");
         }
 
         [Test]
@@ -311,7 +311,7 @@ namespace NUnit.Tests.Android
             //ExEnd
 
             Assert.AreEqual(1, doc.GetChildNodes(NodeType.Shape, true).Count);
-            doc.Save(MyDir + @"\Artifacts\Image.DeleteAllImagesPreOrder.doc");
+            doc.Save(MyDir + "Artifacts/Image.DeleteAllImagesPreOrder.doc");
         }
 
         //ExStart
@@ -336,7 +336,7 @@ namespace NUnit.Tests.Android
             {
                 if (shape.HasImage)
                 {
-                    string imageFileName = string.Format(@"\Artifacts\Image.ExportImages.{0} Out{1}", imageIndex, FileFormatUtil.ImageTypeToExtension(shape.ImageData.ImageType));
+                    string imageFileName = string.Format("Artifacts/Image.ExportImages.{0} Out{1}", imageIndex, FileFormatUtil.ImageTypeToExtension(shape.ImageData.ImageType));
                     shape.ImageData.Save(MyDir + imageFileName);
                     imageIndex++;
                 }
@@ -358,7 +358,7 @@ namespace NUnit.Tests.Android
             DocumentBuilder builder = new DocumentBuilder();
 
             // By default, the image is inserted at 100% scale.
-            Shape shape = builder.InsertImage(MyDir + @"\Images\Aspose.Words.gif");
+            Shape shape = builder.InsertImage(MyDir + "Images/Aspose.Words.gif");
 
             // It is easy to change the shape size. In this case, make it 50% relative to the current shape size.
             shape.Width = shape.Width * 0.5;
@@ -369,7 +369,7 @@ namespace NUnit.Tests.Android
             shape.Width = imageSize.WidthPoints * 1.1;
             shape.Height = imageSize.HeightPoints * 1.1;
 
-            builder.Document.Save(MyDir + @"\Artifacts\Image.ScaleImage.doc");
+            builder.Document.Save(MyDir + "Artifacts/Image.ScaleImage.doc");
             //ExEnd
         }
     }

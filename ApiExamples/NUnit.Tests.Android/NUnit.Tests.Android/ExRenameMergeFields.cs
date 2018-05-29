@@ -44,7 +44,7 @@ namespace NUnit.Tests.Android
                 }
             }
 
-            doc.Save(MyDir + @"\Artifacts\RenameMergeFields.doc");
+            doc.Save(MyDir + "Artifacts/RenameMergeFields.doc");
         }
     }
 

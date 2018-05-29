@@ -41,7 +41,7 @@ namespace NUnit.Tests.Android
             builder.PageSetup.ClearFormatting();
             builder.Writeln("Section 2, back to default Letter paper size, portrait orientation and top alignment.");
 
-            builder.Document.Save(MyDir + @"\Artifacts\PageSetup.ClearFormatting.doc");
+            builder.Document.Save(MyDir + "Artifacts/PageSetup.ClearFormatting.doc");
             //ExEnd
         }
 
@@ -81,7 +81,7 @@ namespace NUnit.Tests.Android
             builder.InsertBreak(BreakType.PageBreak);
             builder.Writeln("Text page 3.");
 
-            builder.Document.Save(MyDir + @"\Artifacts\PageSetup.DifferentHeaders.doc");
+            builder.Document.Save(MyDir + "Artifacts/PageSetup.DifferentHeaders.doc");
             //ExEnd
         }
 
@@ -128,7 +128,7 @@ namespace NUnit.Tests.Android
 
             builder.Writeln("Hello world.");
 
-            builder.Document.Save(MyDir + @"\Artifacts\PageSetup.PageMargins.doc");
+            builder.Document.Save(MyDir + "Artifacts/PageSetup.PageMargins.doc");
             //ExEnd
         }
 
@@ -153,7 +153,7 @@ namespace NUnit.Tests.Android
             builder.InsertBreak(BreakType.ColumnBreak);
             builder.Writeln("Text in column 2.");
 
-            builder.Document.Save(MyDir + @"\Artifacts\PageSetup.ColumnsSameWidth.doc");
+            builder.Document.Save(MyDir + "Artifacts/PageSetup.ColumnsSameWidth.doc");
             //ExEnd
         }
 
@@ -193,7 +193,7 @@ namespace NUnit.Tests.Android
             builder.InsertBreak(BreakType.ColumnBreak);
             builder.Writeln("Wide column 2.");
 
-            builder.Document.Save(MyDir + @"\Artifacts\PageSetup.ColumnsCustomWidth.doc");
+            builder.Document.Save(MyDir + "Artifacts/PageSetup.ColumnsCustomWidth.doc");
             //ExEnd
         }
 
@@ -216,7 +216,7 @@ namespace NUnit.Tests.Android
             for (int i = 1; i <= 20; i++)
                 builder.Writeln(string.Format("Line {0}.", i));
 
-            builder.Document.Save(MyDir + @"\Artifacts\PageSetup.LineNumbers.doc");
+            builder.Document.Save(MyDir + "Artifacts/PageSetup.LineNumbers.doc");
             //ExEnd
         }
 
@@ -245,7 +245,7 @@ namespace NUnit.Tests.Android
             border.Color = Color.Blue;
             border.DistanceFromText = 0;
 
-            doc.Save(MyDir + @"\Artifacts\PageSetup.PageBorderTop.doc");
+            doc.Save(MyDir + "Artifacts/PageSetup.PageBorderTop.doc");
             //ExEnd
         }
 
@@ -270,7 +270,7 @@ namespace NUnit.Tests.Android
             ps.Borders.DistanceFromText = 24;
             ps.Borders.Shadow = true;
 
-            doc.Save(MyDir + @"\Artifacts\PageSetup.PageBorders.doc");
+            doc.Save(MyDir + "Artifacts/PageSetup.PageBorders.doc");
             //ExEnd
         }
 
@@ -315,7 +315,7 @@ namespace NUnit.Tests.Android
             section.PageSetup.RestartPageNumbering = true;
             section.PageSetup.PageNumberStyle = NumberStyle.Arabic;
 
-            doc.Save(MyDir + @"\Artifacts\PageSetup.PageNumbering.doc");
+            doc.Save(MyDir + "Artifacts/PageSetup.PageNumbering.doc");
             //ExEnd
         }
 

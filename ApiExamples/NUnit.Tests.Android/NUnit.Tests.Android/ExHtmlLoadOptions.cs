@@ -31,7 +31,7 @@ namespace NUnit.Tests.Android
             loadOptions.WebRequestTimeout = 1000;
 
             Document doc = new Document(MyDir + "Shape.VmlAndDml.htm", loadOptions);
-            doc.Save(MyDir + @"\Artifacts\Shape.VmlAndDml.docx");
+            doc.Save(MyDir + "Artifacts/Shape.VmlAndDml.docx");
             //ExEnd
         }
 

@@ -41,7 +41,7 @@ namespace NUnit.Tests.Android
             // Now you can pass your data source into Aspose.Words.
             doc.MailMerge.Execute(customersDataSource);
 
-            doc.Save(MyDir + @"\Artifacts\MailMerge.CustomDataSource.doc");
+            doc.Save(MyDir + "Artifacts/MailMerge.CustomDataSource.doc");
         }
 
         /// <summary>

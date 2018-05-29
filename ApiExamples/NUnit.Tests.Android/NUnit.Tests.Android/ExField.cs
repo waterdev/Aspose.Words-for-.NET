@@ -196,7 +196,7 @@ namespace NUnit.Tests.Android
             Thread.CurrentThread.CurrentCulture = currentCulture;
             //ExEnd
 
-            doc.Save(MyDir + @"\Artifacts\Field.ChangeLocale.doc");
+            doc.Save(MyDir + "Artifacts/Field.ChangeLocale.doc");
         }
 
         [Test]
@@ -214,7 +214,7 @@ namespace NUnit.Tests.Android
             tocField.Remove();
 
             // Save the output.
-            doc.Save(MyDir + @"\Artifacts\Document.TableOfContentsRemoveTOC.doc");
+            doc.Save(MyDir + "Artifacts/Document.TableOfContentsRemoveTOC.doc");
             //ExEnd
         }
 
@@ -372,13 +372,13 @@ namespace NUnit.Tests.Android
                 {
                     FieldIncludePicture includePicture = (FieldIncludePicture)field;
 
-                    includePicture.SourceFullName = MyDir + @"\Images\dotnet-logo.png";
+                    includePicture.SourceFullName = MyDir + "Images/dotnet-logo.png";
                     includePicture.Update(true);
                 }
             }
 
             doc.UpdateFields();
-            doc.Save(MyDir + @"\Artifacts\Field.UpdateFieldIgnoringMergeFormat.docx");
+            doc.Save(MyDir + "Artifacts/Field.UpdateFieldIgnoringMergeFormat.docx");
             //ExEnd
         }
 
@@ -509,7 +509,7 @@ namespace NUnit.Tests.Android
                 }
             }
 
-            doc.Save(MyDir + @"\Artifacts\Field.UpdateTocPages.docx");
+            doc.Save(MyDir + "Artifacts/Field.UpdateTocPages.docx");
         }
 
         private void RemoveSequence(Node start, Node end)

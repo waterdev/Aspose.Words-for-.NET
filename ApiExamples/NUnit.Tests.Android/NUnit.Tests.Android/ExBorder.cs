@@ -76,7 +76,7 @@ namespace NUnit.Tests.Android
 
             builder.CurrentParagraph.Runs[0].Text = "Paragraph with no border";
 
-            doc.Save(MyDir + @"\Artifacts\Border.NoBorder.doc");
+            doc.Save(MyDir + "Artifacts/Border.NoBorder.doc");
             //ExEnd
         }
     }

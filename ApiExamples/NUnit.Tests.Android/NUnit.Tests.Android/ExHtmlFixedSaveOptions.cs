@@ -32,7 +32,7 @@ namespace NUnit.Tests.Android
             HtmlFixedSaveOptions htmlFixedSaveOptions = new HtmlFixedSaveOptions();
             htmlFixedSaveOptions.Encoding = new ASCIIEncoding();
 
-            doc.Save(MyDir + @"\Artifacts\UseEncoding.html", htmlFixedSaveOptions);
+            doc.Save(MyDir + "Artifacts/UseEncoding.html", htmlFixedSaveOptions);
             //ExEnd
         }
 
@@ -56,7 +56,7 @@ namespace NUnit.Tests.Android
             htmlFixedSaveOptions.ExportEmbeddedImages = true;
             htmlFixedSaveOptions.ExportEmbeddedSvg = true;
 
-            doc.Save(MyDir + @"\Artifacts\ExportEmbeddedObjects.html", htmlFixedSaveOptions);
+            doc.Save(MyDir + "Artifacts/ExportEmbeddedObjects.html", htmlFixedSaveOptions);
             //ExEnd
         }
 
@@ -70,7 +70,7 @@ namespace NUnit.Tests.Android
             HtmlFixedSaveOptions htmlFixedSaveOptions = new HtmlFixedSaveOptions();
             htmlFixedSaveOptions.Encoding = new UTF32Encoding();
 
-            doc.Save(MyDir + @"\Artifacts\EncodingUsingNewEncoding.html", htmlFixedSaveOptions);
+            doc.Save(MyDir + "Artifacts/EncodingUsingNewEncoding.html", htmlFixedSaveOptions);
         }
 
         //Note: Test doesn't contain validation result, because it's may take a lot of time for assert result
@@ -83,7 +83,7 @@ namespace NUnit.Tests.Android
             HtmlFixedSaveOptions htmlFixedSaveOptions = new HtmlFixedSaveOptions();
             htmlFixedSaveOptions.Encoding = Encoding.GetEncoding("utf-16");
 
-            doc.Save(MyDir + @"\Artifacts\EncodingUsingGetEncoding.html", htmlFixedSaveOptions);
+            doc.Save(MyDir + "Artifacts/EncodingUsingGetEncoding.html", htmlFixedSaveOptions);
         }
 
         [Test]
@@ -100,7 +100,7 @@ namespace NUnit.Tests.Android
             HtmlFixedSaveOptions htmlFixedSaveOptions = new HtmlFixedSaveOptions();
             htmlFixedSaveOptions.ExportFormFields = true;
             
-            doc.Save(MyDir + @"\Artifacts\ExportFormFiels.html", htmlFixedSaveOptions);
+            doc.Save(MyDir + "Artifacts/ExportFormFiels.html", htmlFixedSaveOptions);
             //ExEnd
         }
 
@@ -115,10 +115,10 @@ namespace NUnit.Tests.Android
             HtmlFixedSaveOptions htmlFixedSaveOptions = new HtmlFixedSaveOptions();
             htmlFixedSaveOptions.CssClassNamesPrefix = "test";
 
-            doc.Save(MyDir + @"\Artifacts\cssPrefix_Out.html", htmlFixedSaveOptions);
+            doc.Save(MyDir + "Artifacts/cssPrefix_Out.html", htmlFixedSaveOptions);
             //ExEnd
 
-            DocumentHelper.FindTextInFile(MyDir + @"\Artifacts\cssPrefix_Out\styles.css", "test");
+            DocumentHelper.FindTextInFile(MyDir + "Artifacts/cssPrefix_Out/styles.css", "test");
         }
 
         [Test]
@@ -133,7 +133,7 @@ namespace NUnit.Tests.Android
             HtmlFixedSaveOptions htmlFixedSaveOptions = new HtmlFixedSaveOptions();
             htmlFixedSaveOptions.PageHorizontalAlignment = HtmlFixedPageHorizontalAlignment.Left;
 
-            doc.Save(MyDir + @"\Artifacts\HtmlFixedPageHorizontalAlignment.html", htmlFixedSaveOptions);
+            doc.Save(MyDir + "Artifacts/HtmlFixedPageHorizontalAlignment.html", htmlFixedSaveOptions);
             //ExEnd
         }
 
@@ -145,7 +145,7 @@ namespace NUnit.Tests.Android
             HtmlFixedSaveOptions saveOptions = new HtmlFixedSaveOptions();
             Assert.That(() => saveOptions.PageMargins = -1, Throws.TypeOf<ArgumentException>());
 
-            doc.Save(MyDir + @"\Artifacts\HtmlFixedPageMargins.html", saveOptions);
+            doc.Save(MyDir + "Artifacts/HtmlFixedPageMargins.html", saveOptions);
         }
 
         [Test]
@@ -159,7 +159,7 @@ namespace NUnit.Tests.Android
             HtmlFixedSaveOptions saveOptions = new HtmlFixedSaveOptions();
             saveOptions.PageMargins = 10;
 
-            doc.Save(MyDir + @"\Artifacts\HtmlFixedPageMargins.html", saveOptions);
+            doc.Save(MyDir + "Artifacts/HtmlFixedPageMargins.html", saveOptions);
             //ExEnd
         }
 
@@ -177,7 +177,7 @@ namespace NUnit.Tests.Android
             saveOptions.ExportEmbeddedFonts = false;
             saveOptions.ResourceSavingCallback = new ResourceSavingCallback();
 
-            doc.Save(MyDir + @"\Artifacts\UseMachineFonts Out.html", saveOptions);
+            doc.Save(MyDir + "Artifacts/UseMachineFonts Out.html", saveOptions);
         }
 
         private class ResourceSavingCallback : IResourceSavingCallback

@@ -25,15 +25,15 @@ namespace NUnit.Tests.Android
             // This option uses <ul> and <ol> tags are used for list label representation if it doesn't cause formatting loss, 
             // otherwise HTML <p> tag is used. This is also the default value.
             saveOptions.ExportListLabels = ExportListLabels.Auto;
-            doc.Save(MyDir + @"\Artifacts\Document.ExportListLabels Auto.html", saveOptions);
+            doc.Save(MyDir + "Artifacts/Document.ExportListLabels Auto.html", saveOptions);
 
             // Using this option the <p> tag is used for any list label representation.
             saveOptions.ExportListLabels = ExportListLabels.AsInlineText;
-            doc.Save(MyDir + @"\Artifacts\Document.ExportListLabels InlineText.html", saveOptions);
+            doc.Save(MyDir + "Artifacts/Document.ExportListLabels InlineText.html", saveOptions);
 
             // The <ul> and <ol> tags are used for list label representation. Some formatting loss is possible.
             saveOptions.ExportListLabels = ExportListLabels.ByHtmlTags;
-            doc.Save(MyDir + @"\Artifacts\Document.ExportListLabels HtmlTags.html", saveOptions);
+            doc.Save(MyDir + "Artifacts/Document.ExportListLabels HtmlTags.html", saveOptions);
         }
 
         [Test]
@@ -46,14 +46,14 @@ namespace NUnit.Tests.Android
             HtmlSaveOptions saveOptions = new HtmlSaveOptions();
             saveOptions.ExportOriginalUrlForLinkedImages = export;
 
-            doc.Save(MyDir + @"\Artifacts\HtmlSaveOptions.ExportUrlForLinkedImage.html", saveOptions);
+            doc.Save(MyDir + "Artifacts/HtmlSaveOptions.ExportUrlForLinkedImage.html", saveOptions);
 
-            string[] dirFiles = Directory.GetFiles(MyDir + @"\Artifacts\", "HtmlSaveOptions.ExportUrlForLinkedImage.001.png", SearchOption.AllDirectories);
+            string[] dirFiles = Directory.GetFiles(MyDir + "Artifacts/", "HtmlSaveOptions.ExportUrlForLinkedImage.001.png", SearchOption.AllDirectories);
 
             if (dirFiles.Length == 0)
-                DocumentHelper.FindTextInFile(MyDir + @"\Artifacts\HtmlSaveOptions.ExportUrlForLinkedImage.html", "<img src=\"http://www.aspose.com/images/aspose-logo.gif\"");
+                DocumentHelper.FindTextInFile(MyDir + "Artifacts/HtmlSaveOptions.ExportUrlForLinkedImage.html", "<img src=\"http://www.aspose.com/images/aspose-logo.gif\"");
             else
-                DocumentHelper.FindTextInFile(MyDir + @"\Artifacts\HtmlSaveOptions.ExportUrlForLinkedImage.html", "<img src=\"HtmlSaveOptions.ExportUrlForLinkedImage.001.png\"");
+                DocumentHelper.FindTextInFile(MyDir + "Artifacts/HtmlSaveOptions.ExportUrlForLinkedImage.html", "<img src=\"HtmlSaveOptions.ExportUrlForLinkedImage.001.png\"");
         }
 
         [Ignore("Bug, css styles starting with -aw, even if ExportRoundtripInformation is false")]
@@ -67,12 +67,12 @@ namespace NUnit.Tests.Android
             HtmlSaveOptions saveOptions = new HtmlSaveOptions();
             saveOptions.ExportRoundtripInformation = valueHtml;
 
-            doc.Save(MyDir + @"\Artifacts\HtmlSaveOptions.RoundtripInformation.html");
+            doc.Save(MyDir + "Artifacts/HtmlSaveOptions.RoundtripInformation.html");
 
             if (valueHtml)
-                DocumentHelper.FindTextInFile(MyDir + @"\Artifacts\HtmlSaveOptions.RoundtripInformation.html", "<img src=\"HtmlSaveOptions.RoundtripInformation.003.png\" width=\"226\" height=\"132\" alt=\"\" style=\"margin-top:-53.74pt; margin-left:-26.75pt; -aw-left-pos:-26.25pt; -aw-rel-hpos:column; -aw-rel-vpos:page; -aw-top-pos:41.25pt; -aw-wrap-type:none; position:absolute\" /></span><span style=\"height:0pt; display:block; position:absolute; z-index:1\"><img src=\"HtmlSaveOptions.RoundtripInformation.002.png\" width=\"227\" height=\"132\" alt=\"\" style=\"margin-top:74.51pt; margin-left:-23pt; -aw-left-pos:-22.5pt; -aw-rel-hpos:column; -aw-rel-vpos:page; -aw-top-pos:169.5pt; -aw-wrap-type:none; position:absolute\" /></span><span style=\"height:0pt; display:block; position:absolute; z-index:2\"><img src=\"HtmlSaveOptions.RoundtripInformation.001.png\" width=\"227\" height=\"132\" alt=\"\" style=\"margin-top:199.01pt; margin-left:-23pt; -aw-left-pos:-22.5pt; -aw-rel-hpos:column; -aw-rel-vpos:page; -aw-top-pos:294pt; -aw-wrap-type:none; position:absolute\" />");
+                DocumentHelper.FindTextInFile(MyDir + "Artifacts/HtmlSaveOptions.RoundtripInformation.html", "<img src=\"HtmlSaveOptions.RoundtripInformation.003.png\" width=\"226\" height=\"132\" alt=\"\" style=\"margin-top:-53.74pt; margin-left:-26.75pt; -aw-left-pos:-26.25pt; -aw-rel-hpos:column; -aw-rel-vpos:page; -aw-top-pos:41.25pt; -aw-wrap-type:none; position:absolute\" /></span><span style=\"height:0pt; display:block; position:absolute; z-index:1\"><img src=\"HtmlSaveOptions.RoundtripInformation.002.png\" width=\"227\" height=\"132\" alt=\"\" style=\"margin-top:74.51pt; margin-left:-23pt; -aw-left-pos:-22.5pt; -aw-rel-hpos:column; -aw-rel-vpos:page; -aw-top-pos:169.5pt; -aw-wrap-type:none; position:absolute\" /></span><span style=\"height:0pt; display:block; position:absolute; z-index:2\"><img src=\"HtmlSaveOptions.RoundtripInformation.001.png\" width=\"227\" height=\"132\" alt=\"\" style=\"margin-top:199.01pt; margin-left:-23pt; -aw-left-pos:-22.5pt; -aw-rel-hpos:column; -aw-rel-vpos:page; -aw-top-pos:294pt; -aw-wrap-type:none; position:absolute\" />");
             else
-                DocumentHelper.FindTextInFile(MyDir + @"\Artifacts\HtmlSaveOptions.RoundtripInformation.html", "<img src=\"HtmlSaveOptions.RoundtripInformation.003.png\" width=\"226\" height=\"132\" alt=\"\" style=\"margin-top:-53.74pt; margin-left:-26.75pt; -aw-left-pos:-26.25pt; -aw-rel-hpos:column; -aw-rel-vpos:page; -aw-top-pos:41.25pt; -aw-wrap-type:none; position:absolute\" /></span><span style=\"height:0pt; display:block; position:absolute; z-index:1\"><img src=\"HtmlSaveOptions.RoundtripInformation.002.png\" width=\"227\" height=\"132\" alt=\"\" style=\"margin-top:74.51pt; margin-left:-23pt; -aw-left-pos:-22.5pt; -aw-rel-hpos:column; -aw-rel-vpos:page; -aw-top-pos:169.5pt; -aw-wrap-type:none; position:absolute\" /></span><span style=\"height:0pt; display:block; position:absolute; z-index:2\"><img src=\"HtmlSaveOptions.RoundtripInformation.001.png\" width=\"227\" height=\"132\" alt=\"\" style=\"margin-top:199.01pt; margin-left:-23pt; -aw-left-pos:-22.5pt; -aw-rel-hpos:column; -aw-rel-vpos:page; -aw-top-pos:294pt; -aw-wrap-type:none; position:absolute\" />");
+                DocumentHelper.FindTextInFile(MyDir + "Artifacts/HtmlSaveOptions.RoundtripInformation.html", "<img src=\"HtmlSaveOptions.RoundtripInformation.003.png\" width=\"226\" height=\"132\" alt=\"\" style=\"margin-top:-53.74pt; margin-left:-26.75pt; -aw-left-pos:-26.25pt; -aw-rel-hpos:column; -aw-rel-vpos:page; -aw-top-pos:41.25pt; -aw-wrap-type:none; position:absolute\" /></span><span style=\"height:0pt; display:block; position:absolute; z-index:1\"><img src=\"HtmlSaveOptions.RoundtripInformation.002.png\" width=\"227\" height=\"132\" alt=\"\" style=\"margin-top:74.51pt; margin-left:-23pt; -aw-left-pos:-22.5pt; -aw-rel-hpos:column; -aw-rel-vpos:page; -aw-top-pos:169.5pt; -aw-wrap-type:none; position:absolute\" /></span><span style=\"height:0pt; display:block; position:absolute; z-index:2\"><img src=\"HtmlSaveOptions.RoundtripInformation.001.png\" width=\"227\" height=\"132\" alt=\"\" style=\"margin-top:199.01pt; margin-left:-23pt; -aw-left-pos:-22.5pt; -aw-rel-hpos:column; -aw-rel-vpos:page; -aw-top-pos:294pt; -aw-wrap-type:none; position:absolute\" />");
         }
 
         [Test]
@@ -100,18 +100,18 @@ namespace NUnit.Tests.Android
             saveOptions.ResourceFolder = "Resources";
             saveOptions.ResourceFolderAlias = "https://www.aspose.com/";
 
-            doc.Save(MyDir + @"\Artifacts\HtmlSaveOptions.ExportPageMargins Out.html", saveOptions);
+            doc.Save(MyDir + "Artifacts/HtmlSaveOptions.ExportPageMargins Out.html", saveOptions);
 
-            string[] imageFiles = Directory.GetFiles(MyDir + @"\Artifacts\Resources\", "*.png", SearchOption.AllDirectories);
+            string[] imageFiles = Directory.GetFiles(MyDir + "Artifacts/Resources/", "*.png", SearchOption.AllDirectories);
             Assert.AreEqual(3, imageFiles.Length);
 
-            string[] fontFiles = Directory.GetFiles(MyDir + @"\Artifacts\Resources\", "*.ttf", SearchOption.AllDirectories);
+            string[] fontFiles = Directory.GetFiles(MyDir + "Artifacts/Resources/", "*.ttf", SearchOption.AllDirectories);
             Assert.AreEqual(1, fontFiles.Length);
 
-            string[] cssFiles = Directory.GetFiles(MyDir + @"\Artifacts\Resources\", "*.css", SearchOption.AllDirectories);
+            string[] cssFiles = Directory.GetFiles(MyDir + "Artifacts/Resources/", "*.css", SearchOption.AllDirectories);
             Assert.AreEqual(1, cssFiles.Length);
 
-            DocumentHelper.FindTextInFile(MyDir + @"\Artifacts\HtmlSaveOptions.ExportPageMargins Out.html", "<link href=\"https://www.aspose.com/HtmlSaveOptions.ExportPageMargins Out.css\"");
+            DocumentHelper.FindTextInFile(MyDir + "Artifacts/HtmlSaveOptions.ExportPageMargins Out.html", "<link href=\"https://www.aspose.com/HtmlSaveOptions.ExportPageMargins Out.css\"");
         }
 
         [Test]
@@ -125,7 +125,7 @@ namespace NUnit.Tests.Android
             saveOptions.ExportFontResources = true;
             saveOptions.ExportFontsAsBase64 = true;
             
-            doc.Save(MyDir + @"\Artifacts\HtmlSaveOptions.ExportPageMargins Out.html", saveOptions);
+            doc.Save(MyDir + "Artifacts/HtmlSaveOptions.ExportPageMargins Out.html", saveOptions);
 }
         [TestCase(HtmlVersion.Html5)]
         [TestCase(HtmlVersion.Xhtml)]
@@ -152,14 +152,14 @@ namespace NUnit.Tests.Android
             {
                 case false:
 
-                    doc.Save(MyDir + @"\Artifacts\DocumentExportFonts Out 1.html", saveOptions);
-                    Assert.IsNotEmpty(Directory.GetFiles(MyDir + @"\Artifacts\", "DocumentExportFonts Out 1.times.ttf", SearchOption.AllDirectories)); //Verify that the font has been added to the folder
+                    doc.Save(MyDir + "Artifacts/DocumentExportFonts Out 1.html", saveOptions);
+                    Assert.IsNotEmpty(Directory.GetFiles(MyDir + "Artifacts/", "DocumentExportFonts Out 1.times.ttf", SearchOption.AllDirectories)); //Verify that the font has been added to the folder
                     break;
 
                 case true:
 
-                    doc.Save(MyDir + @"\Artifacts\DocumentExportFonts Out 2.html", saveOptions);
-                    Assert.IsEmpty(Directory.GetFiles(MyDir + @"\Artifacts\", "DocumentExportFonts Out 2.times.ttf", SearchOption.AllDirectories)); //Verify that the font is not added to the folder
+                    doc.Save(MyDir + "Artifacts/DocumentExportFonts Out 2.html", saveOptions);
+                    Assert.IsEmpty(Directory.GetFiles(MyDir + "Artifacts/", "DocumentExportFonts Out 2.times.ttf", SearchOption.AllDirectories)); //Verify that the font is not added to the folder
                     break;
             }
         }
@@ -172,15 +172,15 @@ namespace NUnit.Tests.Android
             HtmlSaveOptions saveOptions = new HtmlSaveOptions();
             saveOptions.CssStyleSheetType = CssStyleSheetType.External;
             saveOptions.ExportFontResources = true;
-            saveOptions.ResourceFolder = MyDir + @"\Artifacts\Resources";
+            saveOptions.ResourceFolder = MyDir + "Artifacts/Resources";
             saveOptions.ResourceFolderAlias = "http://example.com/resources";
 
-            doc.Save(MyDir + @"\Artifacts\HtmlSaveOptions.ResourceFolder Out.html", saveOptions);
+            doc.Save(MyDir + "Artifacts/HtmlSaveOptions.ResourceFolder Out.html", saveOptions);
 
-            Assert.IsNotEmpty(Directory.GetFiles(MyDir + @"\Artifacts\Resources", "HtmlSaveOptions.ResourceFolder Out.001.jpeg", SearchOption.AllDirectories));
-            Assert.IsNotEmpty(Directory.GetFiles(MyDir + @"\Artifacts\Resources", "HtmlSaveOptions.ResourceFolder Out.002.png", SearchOption.AllDirectories));
-            Assert.IsNotEmpty(Directory.GetFiles(MyDir + @"\Artifacts\Resources", "HtmlSaveOptions.ResourceFolder Out.calibri.ttf", SearchOption.AllDirectories));
-            Assert.IsNotEmpty(Directory.GetFiles(MyDir + @"\Artifacts\Resources", "HtmlSaveOptions.ResourceFolder Out.css", SearchOption.AllDirectories));
+            Assert.IsNotEmpty(Directory.GetFiles(MyDir + "Artifacts/Resources", "HtmlSaveOptions.ResourceFolder Out.001.jpeg", SearchOption.AllDirectories));
+            Assert.IsNotEmpty(Directory.GetFiles(MyDir + "Artifacts/Resources", "HtmlSaveOptions.ResourceFolder Out.002.png", SearchOption.AllDirectories));
+            Assert.IsNotEmpty(Directory.GetFiles(MyDir + "Artifacts/Resources", "HtmlSaveOptions.ResourceFolder Out.calibri.ttf", SearchOption.AllDirectories));
+            Assert.IsNotEmpty(Directory.GetFiles(MyDir + "Artifacts/Resources", "HtmlSaveOptions.ResourceFolder Out.css", SearchOption.AllDirectories));
 
         }
 
@@ -192,17 +192,17 @@ namespace NUnit.Tests.Android
             HtmlSaveOptions saveOptions = new HtmlSaveOptions();
             saveOptions.CssStyleSheetType = CssStyleSheetType.External;
             saveOptions.ExportFontResources = true;
-            saveOptions.FontsFolder = MyDir + @"\Artifacts\Fonts";
-            saveOptions.ImagesFolder = MyDir + @"\Artifacts\Images";
-            saveOptions.ResourceFolder = MyDir + @"\Artifacts\Resources";
+            saveOptions.FontsFolder = MyDir + "Artifacts/Fonts";
+            saveOptions.ImagesFolder = MyDir + "Artifacts/Images";
+            saveOptions.ResourceFolder = MyDir + "Artifacts/Resources";
             saveOptions.ResourceFolderAlias = "http://example.com/resources";
 
-            doc.Save(MyDir + @"\Artifacts\HtmlSaveOptions.ResourceFolder Out.html", saveOptions);
+            doc.Save(MyDir + "Artifacts/HtmlSaveOptions.ResourceFolder Out.html", saveOptions);
 
-            Assert.IsNotEmpty(Directory.GetFiles(MyDir + @"\Artifacts\Images", "HtmlSaveOptions.ResourceFolder Out.001.jpeg", SearchOption.AllDirectories));
-            Assert.IsNotEmpty(Directory.GetFiles(MyDir + @"\Artifacts\Images", "HtmlSaveOptions.ResourceFolder Out.002.png", SearchOption.AllDirectories));
-            Assert.IsNotEmpty(Directory.GetFiles(MyDir + @"\Artifacts\Fonts", "HtmlSaveOptions.ResourceFolder Out.calibri.ttf", SearchOption.AllDirectories));
-            Assert.IsNotEmpty(Directory.GetFiles(MyDir + @"\Artifacts\Resources", "HtmlSaveOptions.ResourceFolder Out.css", SearchOption.AllDirectories));
+            Assert.IsNotEmpty(Directory.GetFiles(MyDir + "Artifacts/Images", "HtmlSaveOptions.ResourceFolder Out.001.jpeg", SearchOption.AllDirectories));
+            Assert.IsNotEmpty(Directory.GetFiles(MyDir + "Artifacts/Images", "HtmlSaveOptions.ResourceFolder Out.002.png", SearchOption.AllDirectories));
+            Assert.IsNotEmpty(Directory.GetFiles(MyDir + "Artifacts/Fonts", "HtmlSaveOptions.ResourceFolder Out.calibri.ttf", SearchOption.AllDirectories));
+            Assert.IsNotEmpty(Directory.GetFiles(MyDir + "Artifacts/Resources", "HtmlSaveOptions.ResourceFolder Out.css", SearchOption.AllDirectories));
         }
     }
 }

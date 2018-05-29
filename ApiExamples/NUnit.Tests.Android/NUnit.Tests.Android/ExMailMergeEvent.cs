@@ -52,7 +52,7 @@ namespace NUnit.Tests.Android
             doc.MailMerge.Execute(new string[] { "htmlField1" }, new object[] { htmltext });
 
             // Save resulting document with a new name.
-            doc.Save(MyDir + @"\Artifacts\MailMerge.InsertHtml.doc");
+            doc.Save(MyDir + "Artifacts/MailMerge.InsertHtml.doc");
         }
 
         private class HandleMergeFieldInsertHtml : IFieldMergingCallback
@@ -109,7 +109,7 @@ namespace NUnit.Tests.Android
             doc.MailMerge.ExecuteWithRegions(dataTable);
 
             // Save resulting document with a new name.
-            doc.Save(MyDir + @"\Artifacts\MailMerge.InsertCheckBox.doc");
+            doc.Save(MyDir + "Artifacts/MailMerge.InsertCheckBox.doc");
         }
 
         private class HandleMergeFieldInsertCheckBox : IFieldMergingCallback
@@ -175,7 +175,7 @@ namespace NUnit.Tests.Android
             DataTable dataTable = GetSuppliersDataTable();
             doc.MailMerge.ExecuteWithRegions(dataTable);
 
-            doc.Save(MyDir + @"\Artifacts\MailMerge.AlternatingRows.doc");
+            doc.Save(MyDir + "Artifacts/MailMerge.AlternatingRows.doc");
         }
 
         private class HandleMergeFieldAlternatingRows : IFieldMergingCallback
@@ -261,7 +261,7 @@ namespace NUnit.Tests.Android
             // Pass a URL which points to the image to merge into the document.
             doc.MailMerge.Execute(new string[] { "Logo" }, new object[] { "http://www.aspose.com/images/aspose-logo.gif" });
 
-            doc.Save(MyDir + @"\Artifacts\MailMerge.MergeImageFromUrl.doc");
+            doc.Save(MyDir + "Artifacts/MailMerge.MergeImageFromUrl.doc");
             //ExEnd
 
             // Verify the image was merged into the document.
@@ -304,7 +304,7 @@ namespace NUnit.Tests.Android
             // Close the database.
             //conn.Close();
 
-            //doc.Save(MyDir + @"\Artifacts\MailMerge.MergeImage.doc");
+            //doc.Save(MyDir + "Artifacts/MailMerge.MergeImage.doc");
         }
 
         private class HandleMergeImageFieldFromBlob : IFieldMergingCallback

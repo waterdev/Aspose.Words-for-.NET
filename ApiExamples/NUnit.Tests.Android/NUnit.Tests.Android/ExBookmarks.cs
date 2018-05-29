@@ -169,7 +169,7 @@ namespace NUnit.Tests.Android
 
             p.AppendChild(new Run(doc, "Text after bookmark."));
 
-            doc.Save(MyDir + @"\Artifacts\Bookmarks.CreateBookmarkWithNodes.doc");
+            doc.Save(MyDir + "Artifacts/Bookmarks.CreateBookmarkWithNodes.doc");
             //ExEnd
 
             Assert.AreEqual(doc.Range.Bookmarks["My bookmark"].Text, "Text inside bookmark. ");
@@ -223,7 +223,7 @@ namespace NUnit.Tests.Android
             pdfSaveOptions.OutlineOptions.BookmarksOutlineLevels.Add("My Bookmark", 1);
             pdfSaveOptions.OutlineOptions.BookmarksOutlineLevels.Add("Nested Bookmark", 2);
 
-            doc.Save(MyDir + @"\Artifacts\Bookmarks.WhiteSpaces Out.pdf", pdfSaveOptions);
+            doc.Save(MyDir + "Artifacts/Bookmarks.WhiteSpaces Out.pdf", pdfSaveOptions);
             //ExEnd
         }
     }

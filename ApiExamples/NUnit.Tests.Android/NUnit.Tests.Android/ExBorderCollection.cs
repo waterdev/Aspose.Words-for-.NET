@@ -35,7 +35,7 @@ namespace NUnit.Tests.Android
                 b.LineStyle = LineStyle.Double;
             }
 
-            doc.Save(MyDir + @"\Artifacts\Border.ChangedColourBorder.doc");                                                    
+            doc.Save(MyDir + "Artifacts/Border.ChangedColourBorder.doc");                                                    
             //ExEnd
         }
 

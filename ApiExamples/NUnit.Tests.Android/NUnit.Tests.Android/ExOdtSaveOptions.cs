@@ -26,7 +26,7 @@ namespace NUnit.Tests.Android
             OdtSaveOptions saveOptions = new OdtSaveOptions();
             saveOptions.MeasureUnit = OdtSaveMeasureUnit.Inches;
 
-            doc.Save(MyDir + @"\Artifacts\OdtSaveOptions.MeasureUnit.odt");
+            doc.Save(MyDir + "Artifacts/OdtSaveOptions.MeasureUnit.odt");
             //ExEnd
         }
     }

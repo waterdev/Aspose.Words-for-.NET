@@ -83,9 +83,9 @@ namespace NUnit.Tests.Android
 
             doc.FirstSection.Body.AppendChild(sdt);
 
-            doc.Save(MyDir + @"\Artifacts\SDT.CustomXml.docx");
+            doc.Save(MyDir + "Artifacts/SDT.CustomXml.docx");
             //ExEnd
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + @"\Artifacts\SDT.CustomXml.docx", MyDir + @"\Golds\SDT.CustomXml Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/SDT.CustomXml.docx", MyDir + "Golds/SDT.CustomXml Gold.docx"));
         }
 
         [Test]

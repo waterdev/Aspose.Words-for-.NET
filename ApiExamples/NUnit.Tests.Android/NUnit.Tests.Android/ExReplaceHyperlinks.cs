@@ -55,7 +55,7 @@ namespace NUnit.Tests.Android
                 }
             }
 
-            doc.Save(MyDir + @"\Artifacts\ReplaceHyperlinks.doc");
+            doc.Save(MyDir + "Artifacts/ReplaceHyperlinks.doc");
         }
 
         private const String NewUrl = @"http://www.aspose.com";

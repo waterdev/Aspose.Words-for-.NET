@@ -30,7 +30,7 @@ namespace NUnit.Tests.Android
                 builder.InsertImage(stream, RelativeHorizontalPosition.Margin, 100, RelativeVerticalPosition.Margin, 100, 200, 100, WrapType.Square);
             }
 
-            builder.Document.Save(MyDir + @"\Artifacts\Image.CreateFromStreamRelativePosition.doc");
+            builder.Document.Save(MyDir + "Artifacts/Image.CreateFromStreamRelativePosition.doc");
             //ExEnd
         }
 
@@ -46,13 +46,13 @@ namespace NUnit.Tests.Android
             // Prepare a byte array of an image.
             using (SkiaSharp.SKBitmap bitmap = SkiaSharp.SKBitmap.Decode(ImageDir + "Aspose.Words.gif"))
             {
-                using (SkiaSharp.SKFileWStream fs = new SkiaSharp.SKFileWStream(MyDir + @"\Artifacts\InsertImageFromByteArray.png"))
+                using (SkiaSharp.SKFileWStream fs = new SkiaSharp.SKFileWStream(MyDir + "Artifacts/InsertImageFromByteArray.png"))
                 {
                     bitmap.Encode(fs, SKEncodedImageFormat.Png, 100);
                 }
 
                 builder.InsertImage(bitmap);
-                builder.Document.Save(MyDir + @"\Artifacts\Image.CreateFromByteArrayDefault.docx");
+                builder.Document.Save(MyDir + "Artifacts/Image.CreateFromByteArrayDefault.docx");
             }
             //ExEnd
         }
@@ -69,13 +69,13 @@ namespace NUnit.Tests.Android
             // Prepare a byte array of an image.
             using (SkiaSharp.SKBitmap bitmap = SkiaSharp.SKBitmap.Decode(ImageDir + "Aspose.Words.gif"))
             {
-                using (SkiaSharp.SKFileWStream fs = new SkiaSharp.SKFileWStream(MyDir + @"\Artifacts\InsertImageFromByteArrayCustomSize.png"))
+                using (SkiaSharp.SKFileWStream fs = new SkiaSharp.SKFileWStream(MyDir + "Artifacts/InsertImageFromByteArrayCustomSize.png"))
                 {
                     bitmap.Encode(fs, SKEncodedImageFormat.Png, 100);
                 }
 
                 builder.InsertImage(bitmap, ConvertUtil.PixelToPoint(450), ConvertUtil.PixelToPoint(144));
-                builder.Document.Save(MyDir + @"\Artifacts\Image.CreateFromByteArrayCustomSize.doc");
+                builder.Document.Save(MyDir + "Artifacts/Image.CreateFromByteArrayCustomSize.doc");
             }
             //ExEnd
         }
@@ -92,13 +92,13 @@ namespace NUnit.Tests.Android
             // Prepare a byte array of an image.
             using (SkiaSharp.SKBitmap bitmap = SkiaSharp.SKBitmap.Decode(ImageDir + "Aspose.Words.gif"))
             {
-                using (SkiaSharp.SKFileWStream fs = new SkiaSharp.SKFileWStream(MyDir + @"\Artifacts\InsertImageFromByteArrayCustomSize.png"))
+                using (SkiaSharp.SKFileWStream fs = new SkiaSharp.SKFileWStream(MyDir + "Artifacts/InsertImageFromByteArrayCustomSize.png"))
                 {
                     bitmap.Encode(fs, SKEncodedImageFormat.Png, 100);
                 }
 
                 builder.InsertImage(bitmap, RelativeHorizontalPosition.Margin, 100, RelativeVerticalPosition.Margin, 100, 200, 100, WrapType.Square);
-                builder.Document.Save(MyDir + @"\Artifacts\Image.CreateFromByteArrayCustomSize.doc");
+                builder.Document.Save(MyDir + "Artifacts/Image.CreateFromByteArrayCustomSize.doc");
             }
             //ExEnd
         }
@@ -118,7 +118,7 @@ namespace NUnit.Tests.Android
                 builder.Writeln();
             }
 
-            builder.Document.Save(MyDir + @"\Artifacts\Image.CreateFromImageWithStreamCustomSize.doc");
+            builder.Document.Save(MyDir + "Artifacts/Image.CreateFromImageWithStreamCustomSize.doc");
             //ExEnd
         }
 
@@ -136,7 +136,7 @@ namespace NUnit.Tests.Android
                 builder.InsertImage(rasterImage, RelativeHorizontalPosition.Margin, 100, RelativeVerticalPosition.Margin, 100, 200, 100, WrapType.Square);
             }
 
-            builder.Document.Save(MyDir + @"\Artifacts\Image.CreateFromImageWithStreamRelativePosition.doc");
+            builder.Document.Save(MyDir + "Artifacts/Image.CreateFromImageWithStreamRelativePosition.doc");
             //ExEnd
         }
 
@@ -154,7 +154,7 @@ namespace NUnit.Tests.Android
                 builder.InsertImage(stream, ConvertUtil.PixelToPoint(400), ConvertUtil.PixelToPoint(400));
             }
 
-            builder.Document.Save(MyDir + @"\Artifacts\Image.CreateFromStreamCustomSize.doc");
+            builder.Document.Save(MyDir + "Artifacts/Image.CreateFromStreamCustomSize.doc");
             //ExEnd
         }
 
@@ -173,7 +173,7 @@ namespace NUnit.Tests.Android
             // Local URI
             builder.InsertImage(ImageDir + "Aspose.Words.gif", ConvertUtil.PixelToPoint(400), ConvertUtil.PixelToPoint(400));
 
-            doc.Save(MyDir + @"\Artifacts\DocumentBuilder.InsertImageFromUrlCustomSize.doc");
+            doc.Save(MyDir + "Artifacts/DocumentBuilder.InsertImageFromUrlCustomSize.doc");
             //ExEnd
         }
     }

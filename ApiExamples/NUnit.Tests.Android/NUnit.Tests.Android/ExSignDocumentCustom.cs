@@ -35,7 +35,7 @@ namespace NUnit.Tests.Android
         {
             string signPersonName = "Ron Williams";
             string srcDocumentPath = MyDir + "Document.docx";
-            string dstDocumentPath = MyDir + @"\Artifacts\Document.Signed.docx";
+            string dstDocumentPath = MyDir + "Artifacts/Document.Signed.docx";
             string certificatePath = MyDir + "morzal.pfx";
             string certificatePassword = "aw";
 

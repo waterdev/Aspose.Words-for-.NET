@@ -6,10 +6,8 @@
 //////////////////////////////////////////////////////////////////////////
 
 using System;
+using System.Diagnostics;
 using System.IO;
-using System.Reflection;
-using Android.App;
-using Android.OS;
 using Aspose.Words;
 using NUnit.Framework;
 using Environment = Android.OS.Environment;
@@ -21,24 +19,19 @@ namespace NUnit.Tests.Android
     /// </summary>
     public class ApiExampleBase
     {
-        private readonly String dirPath = MyDir + @"\Artifacts\";
-
-        [SetUp]
-        public void SetUp()
+        [OneTimeSetUp]
+        public void OneTimeSetUp()
         {
-            SetUnlimitedLicense();
+            //ExecuteCommandSync();
 
-            if (!Directory.Exists(dirPath))
-                //Create new empty directory
-                Directory.CreateDirectory(dirPath);
+            SetUnlimitedLicense();
         }
 
-        //[TearDown]
-        //public void TearDown()
-        //{
-        //    //Delete all dirs and files from directory
-        //    Directory.Delete(dirPath, true);
-        //}
+        [OneTimeTearDown]
+        public void OneTimeTearDown()
+        {
+            //Directory.Delete(MyDir, true);
+        }
 
         internal static void SetUnlimitedLicense()
         {
@@ -88,32 +81,31 @@ namespace NUnit.Tests.Android
             gMyDir = Environment.ExternalStorageDirectory.AbsolutePath + "/Data/";
             gImageDir = Environment.ExternalStorageDirectory.AbsolutePath + "/Data/Images/";
             gDatabaseDir = Environment.ExternalStorageDirectory.AbsolutePath + "/Data/Database/";
-
-            var _path = Application.Context.GetExternalFilesDirs(null);
-            string Datapath;
-            foreach (var spath in _path)
-            {
-                if (spath == null) //just loop on if there is no card inserted
-                    continue;
-                if (Environment.InvokeIsExternalStorageEmulated(spath))
-                {   //Emulated
-                    Datapath = spath.AbsolutePath.ToString();
-                }
-                else if (Environment.InvokeIsExternalStorageRemovable(spath))
-                {   //removable
-                    Datapath = spath.AbsolutePath.ToString();
-                    break;
-                }
-            }
         }
 
         private static readonly String gMyDir;
         private static readonly String gImageDir;
         private static readonly String gDatabaseDir;
-        
-        /// <summary>
-        /// This is where the test license is on my development machine.
-        /// </summary>
-        internal const String TestLicenseFileName = @"X:\awnet\TestData\Licenses\Aspose.Total.lic";
+
+        internal static readonly string TestLicenseFileName = Environment.ExternalStorageDirectory.AbsolutePath + "/Data/License/Aspose.Total.lic";
+
+        void ExecuteCommandSync()
+        {
+            string bat = @"X:\Test.bat";
+
+            try
+            {
+                ProcessStartInfo procInfo = new ProcessStartInfo();
+                procInfo.CreateNoWindow = true;
+                procInfo.FileName = @"cmd.exe";
+                procInfo.Verb = "runas";
+                procInfo.Arguments = "/C " + bat;
+                Process.Start(procInfo);  //Start that process.
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
     }
 }

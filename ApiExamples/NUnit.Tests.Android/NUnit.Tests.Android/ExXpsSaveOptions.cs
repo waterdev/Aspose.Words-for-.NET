@@ -25,7 +25,7 @@ namespace NUnit.Tests.Android
             XpsSaveOptions saveOptions = new XpsSaveOptions();
             saveOptions.OptimizeOutput = true;
 
-            doc.Save(MyDir + @"\Artifacts\XPSOutputOptimize.xps");
+            doc.Save(MyDir + "Artifacts/XPSOutputOptimize.xps");
             //ExEnd
         }
     }

@@ -41,7 +41,7 @@ namespace NUnit.Tests.Android
             // Field values from the table are inserted into the mail merge fields found in the document.
             doc.MailMerge.Execute(table);
 
-            doc.Save(MyDir + @"\Artifacts\MailMerge.ExecuteDataTable.doc");
+            doc.Save(MyDir + "Artifacts/MailMerge.ExecuteDataTable.doc");
             //ExEnd
         }
 
@@ -96,7 +96,7 @@ namespace NUnit.Tests.Android
             dataReader.Close();
             conn.Close();
 
-            doc.Save(MyDir + @"\Artifacts\MailMerge.ExecuteDataReader.doc");
+            doc.Save(MyDir + "Artifacts/MailMerge.ExecuteDataReader.doc");
             //ExEnd
         }
 
@@ -119,7 +119,7 @@ namespace NUnit.Tests.Android
             // Populate the document with the data.
             doc.MailMerge.Execute(orderView);
 
-            doc.Save(MyDir + @"\Artifacts\MailMerge.ExecuteDataView.doc");
+            doc.Save(MyDir + "Artifacts/MailMerge.ExecuteDataView.doc");
         }
 
         private static DataTable GetOrders()
@@ -174,7 +174,7 @@ namespace NUnit.Tests.Android
             // If a table is found, its content is merged into the mail merge region in the document.
             doc.MailMerge.ExecuteWithRegions(dataSet);
 
-            doc.Save(MyDir + @"\Artifacts\MailMerge.ExecuteWithRegionsDataSet.doc");
+            doc.Save(MyDir + "Artifacts/MailMerge.ExecuteWithRegionsDataSet.doc");
             //ExEnd
         }
 
@@ -202,7 +202,7 @@ namespace NUnit.Tests.Android
             orderDetailsView.Sort = "ExtendedPrice DESC";
             doc.MailMerge.ExecuteWithRegions(orderDetailsView);
 
-            doc.Save(MyDir + @"\Artifacts\MailMerge.ExecuteWithRegionsDataTable.doc");
+            doc.Save(MyDir + "Artifacts/MailMerge.ExecuteWithRegionsDataTable.doc");
         }
 
         private static DataTable GetTestOrder(int orderId)
@@ -480,9 +480,9 @@ namespace NUnit.Tests.Android
             doc.MailMerge.CleanupOptions = MailMergeCleanupOptions.RemoveEmptyTableRows;
             doc.MailMerge.ExecuteWithRegions(data);
 
-            doc.Save(MyDir + @"\Artifacts\MailMerge.CleanUp.docx");
+            doc.Save(MyDir + "Artifacts/MailMerge.CleanUp.docx");
 
-            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + @"\Artifacts\MailMerge.CleanUp.docx", MyDir + @"\Golds\MailMerge.CleanUp Gold.docx"));
+            Assert.IsTrue(DocumentHelper.CompareDocs(MyDir + "Artifacts/MailMerge.CleanUp.docx", MyDir + "Golds/MailMerge.CleanUp Gold.docx"));
         }
 
         /// <summary>

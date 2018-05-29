@@ -95,7 +95,7 @@ namespace NUnit.Tests.Android
                 }
             }
 
-            doc.Save(MyDir + @"\Artifacts\Document.TableOfContentsTabStops.doc");
+            doc.Save(MyDir + "Artifacts/Document.TableOfContentsTabStops.doc");
             //ExEnd
         }
 

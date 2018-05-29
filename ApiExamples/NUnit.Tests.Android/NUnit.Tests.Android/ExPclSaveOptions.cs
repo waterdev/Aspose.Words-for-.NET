@@ -26,7 +26,7 @@ namespace NUnit.Tests.Android
             PclSaveOptions saveOptions = new PclSaveOptions();
             saveOptions.RasterizeTransformedElements = true;
 
-            doc.Save(MyDir + @"\Artifacts\Document.EpubConversion.pcl", saveOptions);
+            doc.Save(MyDir + "Artifacts/Document.EpubConversion.pcl", saveOptions);
             //ExEnd
         }
 
@@ -43,7 +43,7 @@ namespace NUnit.Tests.Android
             saveOptions.AddPrinterFont("Courier", "Courier");
             saveOptions.FallbackFontName = "Times New Roman";
 
-            doc.Save(MyDir + @"\Artifacts\Document.EpubConversion.pcl", saveOptions);
+            doc.Save(MyDir + "Artifacts/Document.EpubConversion.pcl", saveOptions);
             //ExEnd
         }
     }
